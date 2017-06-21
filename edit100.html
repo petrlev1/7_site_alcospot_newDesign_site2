@@ -156,39 +156,39 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     <br>
     
     <div class="table1">
-                                 <table id="stockRests" class="table table-striped">
+                                 <table id="stockRests" class="table table-striped tablesorter tablesorter-default">
                                      <thead>
-                                     <tr>
-                                             <th data-sorter="false" class="select-all table1MinTd" rowspan="2">
-                                                 <input type="checkbox" id="checkbox-select-all" class="table1Check"/>
-                                             </th>
-                                         <th rowspan="2" class="text-nowrap vertical-bottom">Алк. код</th>
-                                         <th rowspan="2" class="vertical-bottom">Наименование</th>
-                                         <th data-sorter="false" colspan="3" class="text-center">Производитель</th>
-                                         <th rowspan="2" class="text-nowrap vertical-bottom">Справка А</th>
-                                         <th rowspan="2" class="text-nowrap vertical-bottom">Справка B</th>
-                                         <th rowspan="2" class="vertical-bottom text-center">Количество</th>
-                                         <th rowspan="2" class="vertical-bottom text-center">Объём</th>
-                                         <th rowspan="2" class="vertical-bottom text-center">Крепость</th>
-                                             <th data-sorter="false" rowspan="2" class="text-nowrap vertical-bottom"></th>
+                                     <tr class="tablesorter-headerRow">
+                                             <th data-sorter="false" class="select-all table1MinTd tablesorter-header sorter-false" rowspan="2" data-column="0"><div class="tablesorter-header-inner">
+                                                 <input type="checkbox" id="checkbox-select-all" class="table1Check">
+                                             </div></th>
+                                         <th rowspan="2" class="text-nowrap vertical-bottom tablesorter-header" data-column="1"><div class="tablesorter-header-inner">Алк. код</div></th>
+                                         <th rowspan="2" class="vertical-bottom tablesorter-header" data-column="2"><div class="tablesorter-header-inner">Наименование</div></th>
+                                         <th data-sorter="false" colspan="3" class="text-center tablesorter-header sorter-false" data-column="3"><div class="tablesorter-header-inner">Производитель</div></th>
+                                         <th rowspan="2" class="text-nowrap vertical-bottom tablesorter-header" data-column="6"><div class="tablesorter-header-inner">Справка А</div></th>
+                                         <th rowspan="2" class="text-nowrap vertical-bottom tablesorter-header" data-column="7"><div class="tablesorter-header-inner">Справка B</div></th>
+                                         <th rowspan="2" class="vertical-bottom text-center tablesorter-header" data-column="8"><div class="tablesorter-header-inner">Количество</div></th>
+                                         <th rowspan="2" class="vertical-bottom text-center tablesorter-header" data-column="9"><div class="tablesorter-header-inner">Объём</div></th>
+                                         <th rowspan="2" class="vertical-bottom text-center tablesorter-header" data-column="10"><div class="tablesorter-header-inner">Крепость</div></th>
+                                             <th data-sorter="false" rowspan="2" class="text-nowrap vertical-bottom tablesorter-header sorter-false" data-column="11"><div class="tablesorter-header-inner"></div></th>
                                      </tr>
-                                     <tr>
-                                         <th>Название</th>
-                                         <th>ИНН</th>
-                                         <th>КПП</th>
+                                     <tr class="tablesorter-headerRow">
+                                         <th data-column="3" class="tablesorter-header"><div class="tablesorter-header-inner">Название</div></th>
+                                         <th data-column="4" class="tablesorter-header"><div class="tablesorter-header-inner">ИНН</div></th>
+                                         <th data-column="5" class="tablesorter-header"><div class="tablesorter-header-inner">КПП</div></th>
                                      </tr>
                                      </thead>
                                      <tbody id="table-body">
                                          <tr>
                                                  <td class="select-this">
-                                                     <input type="checkbox" id="check-16538115" data-id="16538115"/>
+                                                     <input type="checkbox" id="check-16538115" data-id="16538115">
                                                  </td>
                                              <td class="text-break-all">
 0035543000001251651                                             </td>
                                              <td class="text-break-all">
-                                                     <a class="" style="cursor: pointer" data-url='/StockRests/PositionDetails/16538115' onclick="PositionDetailsShow(this);">Пиво светлое пастеризованное &quot;Сибирская корона классическое&quot; КЕГИ</a>
+                                                     <a class="" style="cursor: pointer" data-url="/StockRests/PositionDetails/16538115" onclick="PositionDetailsShow(this);">Пиво светлое пастеризованное "Сибирская корона классическое" КЕГИ</a>
                                              </td>
-                                             <td class="text-break-all">АО &quot;САН ИНБЕВ&quot;</td>
+                                             <td class="text-break-all">АО "САН ИНБЕВ"</td>
                                              <td class="text-break-all">5020037784</td>
                                              <td class="text-break-all">550702001</td>
                                              <td class="text-break-all">TEST-FA-000000003847341</td>
@@ -200,13 +200,12 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                                                      <a data-id="16538115" class="rest-quantity-sub" href="#">
                                                          <span class="glyphicon glyphicon-minus-sign"></span>
                                                      </a>
-                                                     <input type="text" data-id="16538115" data-quantity='1.00' class="rest-quantity form-control input-sm" value="0"/>
+                                                     <input type="text" data-id="16538115" data-quantity="1.00" class="rest-quantity form-control input-sm" value="0">
                                                      <a data-id="16538115" class="rest-quantity-add" href="#">
                                                          <span class="glyphicon glyphicon-plus-sign"></span>
                                                      </a>
                                                  </td>
                                          </tr>
-                        
                                      </tbody>
                                  </table>
                              </div>
