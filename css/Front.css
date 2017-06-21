@@ -1,4 +1,4 @@
-﻿* {
+* {
     margin: 0;
     padding: 0;
 }
@@ -332,34 +332,32 @@ h2 {
 }
 
 .table1 table {
-    width: 100%;
-    border-width: 0;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-collapse: collapse;
-    background-color: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
-}
-
+  font-size: 13px;
+  width: 100%;
+  border-width: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-collapse: collapse;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2); }
 .table1 thead {
-    color: #fff;
-    background-color: #0774B5;
-    border-collapse: separate;
-}
-
-    .table1 thead td {
-        padding: 15px 10px !important;
-    }
-
+  color: #fff;
+  background-color: #0774B5;
+  border-collapse: separate; }
 .table1 tbody tr:hover {
-    background-color: #F2F2F2;
-}
-
+  background-color: #F2F2F2; }
+.table1 th {
+  color: #edf8fd;
+  font-weight: 100;
+  border-bottom: 1px solid #c1dcec !important;
+  vertical-align: middle !important;
+  padding: 10px 15px !important; }
 .table1 td {
-    border-bottom: 1px #c1dcec solid;
-    padding: 5px 10px !important;
-    vertical-align: middle !important;
-}
+  position: relative;
+  border-bottom: 1px #c1dcec solid;
+  padding: 10px 15px !important;
+  vertical-align: middle !important; }
 
 .table1MinTd {
     width: 1px;
@@ -371,27 +369,28 @@ h2 {
 }
 
 .table1But, .table1ButDel, .table1ButList {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    margin: 0 3px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-
-    .table1But:hover, .table1ButDel:hover, .table1ButList:hover {
-        border: 1px #c1dcec solid;
-        border-radius: 3px;
-    }
+  display: inline-block;
+  font-size: 28px;
+  padding: 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 5px;
+  text-align: center;
+  vertical-align: middle; }
+  .table1But:hover, .table1ButDel:hover, .table1ButList:hover {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
 
 .table1ButDel {
-    background-image: url(Images/NewFront/ButDel.svg);
-}
+  width: 35px;
+  height: 35px;
+  background-image: url(Images/NewFront/ButDel.svg); }
 
 .table1ButList {
-    background-image: url(Images/NewFront/ButList.svg);
-}
+  width: 35px;
+  height: 35px;
+  background-image: url(Images/NewFront/ButList.svg); }
 
 .status1, .statSuccess, .statError, .statBlue {
     display: block;
@@ -579,58 +578,87 @@ footer {
     background-color: #065F94;
 }
 
+@media (min-width: 1600px) {
+  .container {
+    width: 1570px; } }
+@media (max-width: 1600px) {
+  .table1 table {
+    font-size: 11px; }
+    .table1 table th {
+      padding: 10px !important; }
+    .table1 table td {
+      padding: 10px !important; }
+
+  .tablesorter-header-inner:after {
+    padding: 0 0 0 2px; } }
+@media (max-width: 1200px) {
+  body {
+    overflow-x: auto; }
+
+  .table1 table {
+    font-size: 10px; }
+    .table1 table th {
+      padding: 5px !important; }
+    .table1 table td {
+      padding: 5px !important; }
+
+  .tablesorter-header-inner:after {
+    content: "";
+    padding: 0; }
+
+  .tableActItem:after, .tableActItemUp:after, .tableActItemDown:after {
+    font-size: 7px !important;
+    padding: 0 0 0 2px; }
+
+  .table1But, .table1ButDel, .table1ButList {
+    font-size: 18px; }
+
+  .gtdNumInput {
+    font-size: 9px;
+    width: 20px;
+    padding: 3px; }
+
+  .btn-sm {
+    font-size: 8px; } }
 @media (max-width: 992px) {
-    .headProblemBut {
-        margin: 5px 10px;
-    }
+  .headProblemBut {
+    margin: 5px 10px; }
 
-    .headLogin {
-        position: relative;
-        margin: 15px 15px;
-    }
+  .headLogin {
+    position: relative;
+    margin: 15px 15px; }
 
-    .toolPanel1 .col-md-8 {
-        border-right: none;
-    }
+  .toolPanel1 .col-md-8 {
+    border-right: none; }
+  .toolPanel1 .col-md-4 {
+    text-align: left; }
 
-    .toolPanel1 .col-md-4 {
-        text-align: left;
-    }
+  .toolPanel2 .col-md-4 {
+    border-right: none; }
 
-    .toolPanel2 .col-md-4 {
-        border-right: none;
-    }
+  .table1 table {
+    font-size: 8px; }
+    .table1 table th {
+      padding: 4px !important; }
+    .table1 table td {
+      padding: 4px !important; }
 
-    .table1 {
-        font-size: 11px;
-    }
+  .tableArrow {
+    font-size: 6px;
+    padding: 0 0 0 2px; }
 
-    footer {
-        font-size: 11px;
-    }
+  .butCallBack {
+    padding: 6px 12px 6px 40px; }
 
-    .butCallBack {
-        padding: 6px 12px 6px 40px;
-    }
+  .footIc {
+    padding: 10px 0 10px 45px; }
 
-    .footIc {
-        padding: 10px 0 10px 45px;
-    }
+  .footerBottom {
+    font-size: 11px; }
 
-    .footerBottom {
-        font-size: 11px;
-    }
-
-    .table1But, .table1ButDel, .table1ButList {
-        width: 20px;
-        height: 20px;
-    }
-}
-
+  .table1But, .table1ButDel, .table1ButList {
+    font-size: 12px;
+    padding: 6px; } }
 @media (max-width: 768px) {
-    body {
-        overflow-x: auto;
-    }
-}
-
-/*# sourceMappingURL=style.css.map */
+  body {
+    overflow-x: auto; } }
