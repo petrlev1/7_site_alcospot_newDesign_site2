@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Untitled Document</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/Front.css" rel="stylesheet" type="text/css">
+
+<script type='text/javascript' src='js/jquery-3.2.1.min.js'></script>
+
+<script type='text/javascript' src='js/jquery.floatThead.min.js'></script>
+
+<script>
+$(document).ready(function () {
+
+        var docHeight = $(window).height();
+        var footerHeight = $('footer').height();
+        var footerTop = $('footer').position().top + footerHeight;
+
+        if (footerTop < docHeight) {
+            $('footer').css('margin-top', 10 + (docHeight - footerTop) + 'px');
+        }
+    });
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="headRowUp">
+<div class="container">
+<div class="col-md-4 colLogo">
+  <div class="logo"><a href="#"><img src="css/Images/logo.svg"></a><span class="version">v‌2.7.11</span></div>
+  </div>
+  <div class="col-md-8 headLine"><div class="headTel">8 (499) 653-61-43</div>
+    <div class="headProblemBut"><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span>Сообщить о проблеме</a></div>
+    <div class="headLogin">Вы вошли как: Test User</div></div>
+    </div>
+    </div>
+<div class="col-md-2"></div>
+<div class="container">
+      <div class="nav1">
+        <a href="#">Главная</a>
+        
+        <div class="nav1SubMenuHover">
+        <a href="#" class="nav1SubItem">Склад</a>
+        <div class="nav1SubMenu">
+        <div class="container">
+        <div class="col-md-4"><ul><a href="#">Акт списания продукции</a></ul></div>
+        <div class="col-md-4"><ul><a href="#">Акт постановки на баланс</a></ul></div>
+        <div class="col-md-4"><ul><a href="#">Акт перемещения продукции</a></ul></div>
+        </div>
+        </div>
+        </div>
+ 
+        <div class="nav1SubMenuHover">
+        <a href="#" class="nav1SubItem">Торговый зал</a>
+        <div class="nav1SubMenu">
+        <div class="container">
+          <div class="col-md-3"><ul><a href="#">Торговый зал</a></ul></div>
+         <div class="col-md-7"><ul><a href="#">Инвентаризация</a></ul></div>
+        </div>
+        </div>
+        </div>
+        
+        <div class="nav1SubMenuHover">
+        <a href="#" class="nav1SubItem">Накладные</a>
+        <div class="nav1SubMenu">
+        <div class="container">
+        <div class="col-md-6">
+        <ul>
+          <a href="#">Входящие товаро-транспортные накладные</a>
+        </ul>
+        </div>
+        <div class="col-md-6">
+        <ul>
+          <a href="#">Исходящие товаро-транспортные накладные</a>
+        </ul>
+        </div>
+        </div>
+        </div>
+        </div>
+        
+        <a href="#">Декларации</a>
+        
+        <div class="nav1SubMenuHover">
+        <a href="#" class="nav1SubItem">Отчеты и выгрузка</a>
+        <div class="nav1SubMenu">
+        <div class="container">
+        <div class="col-md-7"></div>
+        <div class="col-md-2"><ul><a href="#">Отчеты</a></ul></div>
+         <div class="col-md-3"><ul><a href="#">Выгрузка данных</a></ul></div>
+        </div>
+        </div>
+        </div>
+        
+        <a href="#">Помощь</a><a href="#">Контакты</a>
+        
+  </div>
+  <div class="nav1ChangeOrg">
+<span class="nav1ChangeOrgLink">ЦентрИКТ (ООО Центр ИКТ КПП 772501001)<span class="glyphicon glyphicon-chevron-down"></span>
+<ul>
+<a href="#">ЦентрИКТ (ООО Центр ИКТ КПП 772501002)</a>
+<a href="#">ЦентрИКТ (ООО Центр ИКТ КПП 772501002)</a>
+<a href="#">ЦентрИКТ (ООО Центр ИКТ КПП 772501002)</a>
+</ul>
+</span><span class="linkBut subLinks1"><a href="#">Выбрать другую организацию</a></span>
+</div>
+</div>
+  
+</header>
+<div class="bodyBack">
+  <div class="container">
+    <div class="breadcrumb2"><a href="#">Главная</a>/<a href="#">Торговый зал</a>/<a href="#">Товарно-транспортные накладные</a></div>
+    
+    <div class="col-md-8"><h1>Входящие товарно-транспортные накладные</h1></div>
+    <div class="col-md-4" style="text-align:right"><div class="expUserItem"><a href="#"><span class="glyphicon glyphicon-wrench"></span>Режим опытного пользователя</a></div></div>
+    <div class="col-md-12 descText">Товарно-транспортная накладная (ТТН) предназначена для учёта движения товарно-материальных ценностей (ТМЦ) при их перемещении с участием транспортных средств и является основанием для списания ТМЦ у грузоотправителя и оприходования их у грузополучателя. Как правило, оформляется грузоотправителем. Однако по согласованию сторон документ может составляться и перевозчиком.<br>
+Некоторые организации используют ТТН для списания/оприходования товарно-материальных ценностей (вместо товарной накладной ТОРГ-12).</div>
+  </div>
+  
+    <div class="toolPanel1">
+    <div class="container">
+      <div class="col-md-8">
+        <div class="subLinks1 linkBut"><a href="#" class="active">Все</a><a href="#">Новые</a><a href="#">Ожидающие подтверждения</a><a href="#">Принятые</a><a href="#">Отклоненные</a></div>
+      </div>
+      <div class="col-md-4">
+      <div class="subLinks1 linkBut"><a href="#" class="active">Входящие</a><a href="#">Исходящие</a></div>
+      </div>
+    </div>
+    </div>
+    
+  <div class="toolPanel2">
+    <div class="container">
+    <div class="subLinks1 linkBut">
+     <div class="col-md-4">
+      <div class="subBlock1"><strong>Действия:</strong><a href="#">Отправить в ТЗ</a><a href="#" class="delItem"><span class="glyphicon glyphicon-remove"></span>Удалить</a></div>
+      </div>
+      <div class="col-md-8">
+      <div class="subBlock1"><strong>Сменить статус:</strong><a href="#">Новая</a><a href="#">Принятая полностью</a><a href="#">Отклоненная полностью</a></div>
+      </div>
+    </div>
+    </div>
+    </div>
+    
+    <div class="container">
+    <br>
+    
+    <div class="table1">
+                                 <table id="stockRests" class="table table-striped tablesorter tablesorter-default">
+                                     <thead>
+                                     <tr class="tablesorter-headerRow">
+                                             <th data-sorter="false" class="select-all table1MinTd tablesorter-header sorter-false" rowspan="2" data-column="0">
+                                                 <input type="checkbox" id="checkbox-select-all" class="table1Check">
+                                            </th>
+                                         <th rowspan="2" data-column="1"><div class="tablesorter-header-inner tableActItemDown">Алк. код</div></th>
+                                         <th rowspan="2" class="vertical-bottom tablesorter-header" data-column="2"><div class="tablesorter-header-inner tableActItemUp">Наименование</div></th>
+                                         <th data-sorter="false" colspan="3" class="text-center tablesorter-header sorter-false" data-column="3">Производитель</th>
+                                         <th rowspan="2" class="text-nowrap vertical-bottom tablesorter-header" data-column="6"><div class="tablesorter-header-inner">Справка А</div></th>
+                                         <th rowspan="2" class="text-nowrap vertical-bottom tablesorter-header" data-column="7"><div class="tablesorter-header-inner">Справка B</div></th>
+                                         <th rowspan="2" class="vertical-bottom text-center tablesorter-header" data-column="8"><div class="tablesorter-header-inner">Количество</div></th>
+                                         <th rowspan="2" class="vertical-bottom text-center tablesorter-header" data-column="9"><div class="tablesorter-header-inner">Объём</div></th>
+                                         <th rowspan="2" class="vertical-bottom text-center tablesorter-header" data-column="10"><div class="tablesorter-header-inner">Крепость</div></th>
+                                             <th data-sorter="false" rowspan="2" class="text-nowrap vertical-bottom tablesorter-header sorter-false" data-column="11"></th>
+                                     </tr>
+                                     <tr class="tablesorter-headerRow">
+                                         <th data-column="3" class="tablesorter-header"><div class="tablesorter-header-inner">Название</div></th>
+                                         <th data-column="4" class="tablesorter-header"><div class="tablesorter-header-inner">ИНН</div></th>
+                                         <th data-column="5" class="tablesorter-header"><div class="tablesorter-header-inner">КПП</div></th>
+                                     </tr>
+                                     </thead>
+                                     <tbody id="table-body">
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                         
+                                     <tr>
+                                                 <td class="select-this">
+                                                     <input type="checkbox" id="check-16538115" data-id="16538115" class="table1Check">
+                                                 </td>
+                                             <td class="text-break-all">
+0035543000001251651                                             </td>
+                                             <td class="text-break-all">
+                                                     <a class="" style="cursor: pointer" data-url="/StockRests/PositionDetails/16538115" onClick="PositionDetailsShow(this);">Пиво светлое пастеризованное "Сибирская корона классическое" КЕГИ</a>
+                                             </td>
+                                             <td class="text-break-all">АО "САН ИНБЕВ"</td>
+                                             <td class="text-break-all">5020037784</td>
+                                             <td class="text-break-all">550702001</td>
+                                             <td class="text-break-all">TEST-FA-000000003847341</td>
+                                             <td class="text-break-all">TEST-FB-000000005750381</td>
+                                             <td class="text-center">1</td>
+                                             <td class="text-center">5.3</td>
+                                             <td class="text-center">5.30</td>
+                                                 <td>
+                                                 <div class="numArrows">
+                                                     <a data-id="16538115" class="rest-quantity-sub" href="#">
+                                                         <span class="glyphicon glyphicon-triangle-top"></span>
+                                                     </a>
+                                                     <input type="text" data-id="16538115" data-quantity="1.00" class="form-control" value="15">
+                                                     <a data-id="16538115" class="rest-quantity-add" href="#">
+                                                         <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                     </a>
+                                                   </div>
+                                                 </td>
+                                       </tr><tr>
+                                                 <td class="select-this">
+                                                     <input type="checkbox" id="check-16538121" data-id="16538121" class="table1Check">
+                                                 </td>
+                                             <td class="text-break-all">
+0036245000001234395                                             </td>
+                                             <td class="text-break-all">
+                                                     <a class="" style="cursor: pointer" data-url="/StockRests/PositionDetails/16538121" onClick="PositionDetailsShow(this);">Пиво светлое непастеризованное "Русское пиво" классическое</a>
+                                             </td>
+                                             <td class="text-break-all">АО "РПК "Хмелёфф"</td>
+                                             <td class="text-break-all">6228002327</td>
+                                             <td class="text-break-all">623401001</td>
+                                             <td class="text-break-all">TEST-FA-000000016480378</td>
+                                             <td class="text-break-all">TEST-FB-000000032547798</td>
+                                             <td class="text-center">5</td>
+                                             <td class="text-center">4</td>
+                                             <td class="text-center">4.00</td>
+                                                 <td>
+                                                 <div class="numArrows">
+                                                     <a data-id="16538115" class="rest-quantity-sub" href="#">
+                                                         <span class="glyphicon glyphicon-triangle-top"></span>
+                                                     </a>
+                                                     <input type="text" data-id="16538115" data-quantity="1.00" class="form-control" value="15">
+                                                     <a data-id="16538115" class="rest-quantity-add" href="#">
+                                                         <span class="glyphicon glyphicon-triangle-bottom"></span>
+                                                     </a>
+                                                   </div>
+                                                 </td>
+
+
+                                         </tr></tbody>
+                                 </table>
+      </div>
+                             
+                             <br>
+
+    
+<div class="table1">
+            <table id="wayBillTable" class="table table-striped">
+                <thead>
+                <tr>
+                    <th rowspan="2">№</th>
+                    <th rowspan="2">Полное наименование</th>
+                    <th rowspan="2">Емкость, л</th>
+                    <th rowspan="2">Спирт, %</th>
+                    <th rowspan="2">Цена, руб</th>
+                    <th rowspan="2">Производитель/Импортёр</th>
+                    <th rowspan="2">Код товара</th>
+                    <th rowspan="2">Статус</th>
+                    <th rowspan="2">Справка "Б"</th>
+                    <th colspan="2">Количество</th>
+                    <th rowspan="2" colspan="2" class="text-nowrap">Номер<br>ГТД</th>
+                        <th rowspan="2"></th>
+                </tr>
+                <tr>
+                    <th>в ТТН</th>
+                    <th>по факту</th>
+                </tr>
+                </thead>
+                <tbody>
+                        <tr class="positionRow" data-id="1234953" style="color: green;">
+                            <td>32</td>
+                            <td style="text-align: left;">Пивной напиток "КОКТЕЙЛЬ БЛЕЙЗЕР" ("COCKTAIL BLAZER") со вкусом апельсина"</td>
+                            <td>1.50000</td>
+                            <td>6.70</td>
+                            <td>38</td>
+                            <td style="text-align: left;">Общество с ограниченной ответственностью "ДАЛ"</td>
+                            <td>0035817000001292353</td>
+                            <td class="positionStatus"><span class="btn-success btn-sm">Верно</span></td>
+                            <td>TEST-FB-000000005929909</td>
+                            <td class="countTtn">2.00000</td>
+                            <td class="countReal">2.00000</td>
+                            <td class="text-nowrap"><input type="text" value="11111111/111111/1111111" id="gtd-editor-1234953" name="gtd-editor-1234953" data-id="1234953" data-quantity="2.00000" class="form-control gtd-editor gtdNumInput" data-val="true" data-val-regex-pattern="^[0-9]{8}\/[0-9]{6}\/(П|[0-9]{1})[0-9]{6}(\/[0-9]{1,3}){0,1}$" data-val-regex="Неверный формат номера"></td>
+                                            <td>
+                                              <a href="#" class="table1But table1ButAccept glyphicon glyphicon-ok" onClick="acceptPosition(this);return false; "></a>
+                                            </td>
+                                            <td>
+                                                <a href="#" class="table1But table1ButEdit glyphicon glyphicon-pencil" onClick="editPosition(this);return false; "></a>
+                                            </td>
+                        </tr>
+                        <tr class="positionRow" data-id="1234952" style="color: green;">
+                            <td>31</td>
+                            <td style="text-align: left;">Хамовники Венское бутылка светлое пастеризованное фильтрованное</td>
+                            <td>0.50000</td>
+                            <td>4.50</td>
+                            <td>36</td>
+                            <td style="text-align: left;">ЗАО "Московская Пивоваренная Компания"</td>
+                            <td>0350258000001237779</td>
+                            <td class="positionStatus"><span class="btn-success btn-sm">Верно</span></td>
+                            <td>TEST-FB-000000005854950</td>
+                            <td class="countTtn">15.00000</td>
+                            <td class="countReal">15.00000</td>
+                            <td class="text-nowrap"><input type="text" value="11111111/111111/1111111" id="gtd-editor-1234953" name="gtd-editor-1234953" data-id="1234953" data-quantity="2.00000" class="form-control gtd-editor gtdNumInput" data-val="true" data-val-regex-pattern="^[0-9]{8}\/[0-9]{6}\/(П|[0-9]{1})[0-9]{6}(\/[0-9]{1,3}){0,1}$" data-val-regex="Неверный формат номера"></td>
+                            <td><a href="#" class="table1But table1ButAccept glyphicon glyphicon-ok" onClick="acceptPosition(this);return false; "></a></td>
+                            <td><a href="#" class="table1But table1ButEdit glyphicon glyphicon-pencil" onClick="editPosition(this);return false; "></a></td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+            <div style="text-align:right">
+              <button type="button" class="btn btn-primary" id="button-save-gtd">Сохранить</button>
+            </div>
+    </div>
+        
+                      
+<br>
+                             
+                             <div class="table1">
+            <table id="wayBills" class="table table-striped sticky-header">
+                <thead>
+                <tr>
+                    <th data-sorter="false" class="select-all table1MinTd">
+                        <input type="checkbox" id="checkbox-select-all" class="table1Check"/>
+                    </th>
+                    <th>Номер</th>
+                    <th>Дата</th>
+                    <th>Контрагент</th>
+                    <th>Сумма, руб</th>
+                    <th data-sorter="false">Торг. зал</th>
+                    <th>Статус</th>
+                    <th>Номер ЕГАИС</th>
+                        <th data-sorter="false" class="table-column-action"></th>
+                        <th data-sorter="false" class="table-column-delete"></th>
+                </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="ttn-New" data-href='/IncomingWayBill/ShowDetails/179503' data-id="179503" data-wbregid="179503">
+                        <td class="select-this">
+                                <input type="checkbox" class="table1Check" id="check-179503" data-id="179503" />
+                        </td>
+                        <td class="ttnCell"><a href="/IncomingWayBill/ShowDetails/179503">00000655</a></td>
+                        <td class="ttnCell">12.01.2017</td>
+                        <td class="ttnCell">ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ &quot;АВТОСТРОЙКОМПЛЕКТ&quot;</td>
+                        <td class="ttnCell">616</td>
+                        <td class="ttnCell noClick">
+                        </td>
+                        <td class="ttnCell noClick">
+                                    <button type="button" class="btn status1">Новая ТТН</button>
+                        </td>
+                        <td class="ttnCell noClick">TEST-TTN-0006685976</td>
+                            <td class="table-column-action">
+                                <div class="btn-group">
+                                    <a href="#" class="dropdown-toggle table1ButList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="#" id="change-state-179503" data-id="179503" data-state="Unrevised">Новая</a></li>
+                                        <li><a href="#" id="change-state-179503" data-id="179503" data-state="Accept">Принятая полностью</a></li>
+                                        <li><a href="#" id="change-state-179503" data-id="179503" data-state="Reject">Отклонённая полностью</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="table-column-delete">
+                                <a class="table1ButDel" href="#" id="delete-179503" data-id="179503">  
+                                </a>
+                            </td>
+                    </tr>
+                    <tr class="ttn-ActSentUnknown" data-href='/IncomingWayBill/ShowDetails/179502' data-id="179502" data-wbregid="179502">
+                        <td class="select-this">
+                                <input type="checkbox" class="table1Check" id="check-179502" data-id="179502" />
+                        </td>
+                        <td class="ttnCell"><a href="/IncomingWayBill/ShowDetails/179502">00000656</a></td>
+                        <td class="ttnCell">12.01.2017</td>
+                        <td class="ttnCell">ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ &quot;АВТОСТРОЙКОМПЛЕКТ&quot;</td>
+                        <td class="ttnCell">1350</td>
+                        <td class="ttnCell noClick">
+                        </td>
+                        <td class="ttnCell noClick">
+                                    <button type="button" class="btn status1">Акт был отправлен в ЕГАИС</button>
+                        </td>
+                        <td class="ttnCell noClick">TEST-TTN-0006685977</td>
+                            <td class="table-column-action">
+                                <div class="btn-group">
+                                    <a href="#" class="dropdown-toggle table1ButList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="#" id="change-state-179502" data-id="179502" data-state="Unrevised">Новая</a></li>
+                                        <li><a href="#" id="change-state-179502" data-id="179502" data-state="Accept">Принятая полностью</a></li>
+                                        <li><a href="#" id="change-state-179502" data-id="179502" data-state="Reject">Отклонённая полностью</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="table-column-delete">
+                                <a class="table1ButDel" href="#" id="delete-179502" data-id="179502">  
+                                </a>
+                            </td>
+                    </tr>
+                    <tr class="ttn-WayBillAccepted" data-href='/IncomingWayBill/ShowDetails/40560' data-id="40560" data-wbregid="40560">
+                        <td class="select-this">
+                                <input type="checkbox" class="table1Check" id="check-40560" data-id="40560" />
+                        </td>
+                        <td class="ttnCell"><a href="/IncomingWayBill/ShowDetails/40560">104</a></td>
+                        <td class="ttnCell">02.06.2016</td>
+                        <td class="ttnCell">ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ &quot;ЦЕНТР СТРОЙ ГРУПП&quot;</td>
+                        <td class="ttnCell">0</td>
+                        <td class="ttnCell noClick">
+                                        <button type="button" class="btn-send-to-shop statBlue">Отправить</button>
+                        </td>
+                        <td class="ttnCell noClick">
+                                    <button type="button" class="btn statSuccess">ТТН принята полностью в ЕГАИС</button>
+                        </td>
+                        <td class="ttnCell noClick">TEST-TTN-0003177358</td>
+                            <td class="table-column-action">
+                                <div class="btn-group">
+                                    <a href="#" class="dropdown-toggle table1ButList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="#" id="change-state-40560" data-id="40560" data-state="Unrevised">Новая</a></li>
+                                        <li><a href="#" id="change-state-40560" data-id="40560" data-state="Accept">Принятая полностью</a></li>
+                                        <li><a href="#" id="change-state-40560" data-id="40560" data-state="Reject">Отклонённая полностью</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="table-column-delete">
+                                <a class="table1ButDel" href="#" id="delete-40560" data-id="40560">  
+                                </a>
+                            </td>
+                    </tr>
+                    <tr class="ttn-WayBillAccepted" data-href='/IncomingWayBill/ShowDetails/33780' data-id="33780" data-wbregid="33780">
+                        <td class="select-this">
+                                <input type="checkbox" class="table1Check" id="check-33780" data-id="33780" />
+                        </td>
+                        <td class="ttnCell"><a href="/IncomingWayBill/ShowDetails/33780">103</a></td>
+                        <td class="ttnCell">18.05.2016</td>
+                        <td class="ttnCell">ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ &quot;ЦЕНТР  СТРОЙ  ГРУПП&quot;</td>
+                        <td class="ttnCell">0</td>
+                        <td class="ttnCell noClick">
+                                        <button type="button" class="btn-show-send-error statError" data-actId="2204">Ошибка</button>
+                        </td>
+                        <td class="ttnCell noClick">
+                                    <button type="button" class="btn statSuccess">ТТН принята полностью в ЕГАИС</button>
+                        </td>
+                        <td class="ttnCell noClick">TEST-TTN-0002888088</td>
+                            <td class="table-column-action">
+                                <div class="btn-group">
+                                    <a href="#" class="dropdown-toggle table1ButList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="#" id="change-state-33780" data-id="33780" data-state="Unrevised">Новая</a></li>
+                                        <li><a href="#" id="change-state-33780" data-id="33780" data-state="Accept">Принятая полностью</a></li>
+                                        <li><a href="#" id="change-state-33780" data-id="33780" data-state="Reject">Отклонённая полностью</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="table-column-delete">
+                                <a class="table1ButDel" href="#" id="delete-33780" data-id="33780">  
+                                </a>
+                            </td>
+                    </tr>
+                    <tr class="ttn-WayBillAccepted" data-href='/IncomingWayBill/ShowDetails/33570' data-id="33570" data-wbregid="33570">
+                        <td class="select-this">
+                                <input type="checkbox" class="table1Check" id="check-33570" data-id="33570" />
+                        </td>
+                        <td class="ttnCell"><a href="/IncomingWayBill/ShowDetails/33570">test-303</a></td>
+                        <td class="ttnCell">17.05.2016</td>
+                        <td class="ttnCell">ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ &quot;ЗАБАЙКАЛСЕРВИССТРОЙ&quot;</td>
+                        <td class="ttnCell">0</td>
+                        <td class="ttnCell noClick">
+                                        <button type="button" class="btn-show-send-error statError" data-actId="12768">Ошибка</button>
+                        </td>
+                        <td class="ttnCell noClick">
+                                    <button type="button" class="btn statSuccess">ТТН принята полностью в ЕГАИС</button>
+                        </td>
+                        <td class="ttnCell noClick">TEST-TTN-0002870420</td>
+                            <td class="table-column-action">
+                                <div class="btn-group">
+                                    <a href="#" class="dropdown-toggle table1ButList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="#" id="change-state-33570" data-id="33570" data-state="Unrevised">Новая</a></li>
+                                        <li><a href="#" id="change-state-33570" data-id="33570" data-state="Accept">Принятая полностью</a></li>
+                                        <li><a href="#" id="change-state-33570" data-id="33570" data-state="Reject">Отклонённая полностью</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td class="table-column-delete">
+                                <a class="table1ButDel" href="#" id="delete-33570" data-id="33570">  
+                                </a>
+                            </td>
+                    </tr>
+       
+                </tbody>
+            </table>
+        </div>
+        
+        <br>
+
+
+
+    <div class="table1">
+      <table class="table table-striped sticky-header">
+            <thead>
+              <tr>
+                <td class="table1MinTd"><input name="" type="checkbox" value="" class="table1Check"></td><td>Номер</td><td>Дата</td><td>Контрагент</td><td>Сумма. руб</td><td>Торг. зал</td><td>Статус</td><td>Номер ЕГАИС</td><td></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input name="" type="checkbox" value="" class="table1Check"></td><td>2009636106</td><td>04.05.2017</td><td>0</td><td>0</td><td><input type="button" class="statSuccess" value="Перемещено"></td>
+                <td>&nbsp;</td><td>2009636106
+                  <input type="button" class="statSuccess" value="ТТН принята полностью в ЕГАИС"></td><td><a href="#" class="table1ButList"></a><a href="#" class="table1ButDel"></a></td>
+              </tr>
+             <tr>
+                <td><input name="" type="checkbox" value="" class="table1Check"></td><td>2009636106</td><td>04.05.2017</td><td>0</td><td>0</td><td><input type="button" class="statError" value="Ошибка"></td>
+                <td><input type="button" class="statError" value="Отклонена полностью"></td><td>2009636106</td><td><a href="#" class="table1ButList"></a><a href="#" class="table1ButDel"></a></td>
+              </tr>
+              <tr>
+                <td><input name="" type="checkbox" value="" class="table1Check"></td><td>2009636106</td><td>04.05.2017</td><td>0</td><td>0</td><td><input type="button" class="statBlue" value="Отправить"></td>
+                <td><input type="button" class="statBlue" value="ТТН принята полностью в ЕГАИС"></td><td>2009636106</td><td><a href="#" class="table1ButList"></a><a href="#" class="table1ButDel"></a></td>
+              </tr>
+              <tr>
+                <td><input name="" type="checkbox" value="" class="table1Check"></td><td>2009636106</td><td>04.05.2017</td><td>0</td><td>0</td><td><input type="button" class="status1" value="Перемещено"></td>
+                <td><input type="button" class="status1" value="Не проверялась"></td><td>2009636106</td><td><a href="#" class="table1ButList"></a><a href="#" class="table1ButDel"></a></td>
+              </tr>
+           
+              
+            </tbody>
+      </table>
+    </div>
+    <div class="paginationBlock">
+      <ul class="pagination">
+        <li><a href="#">«</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">»</a></li>
+  </ul>
+    </div>
+  </div>
+  
+  <div class="footer2">
+       <div class="container">
+       <div class="col-sm-6">
+        <div class="footTel footTelPosF2">8 (499) 653-61-43</div><a href="#" class="butCallBack butCallBackPosF2">Обратный звонок</a>
+        </div>
+        <div class="col-sm-6">
+        <a href="#" class="footIcF2 footIcVideo">Видеоинструкция</a>
+        <a href="#" class="footIcF2 footIcHelp">Помощь</a>
+        <a href="#" class="footIcF2 footIcCont">Контакты</a>
+        </div>
+       </div>
+       </div>
+  
+  <footer>
+        
+        <div class="footerTop">
+        <div class="container">
+        
+        <div class="footCol">
+        <div><div class="footTel footTelPos">8 (499) 653-61-43</div></div>
+        <a href="#" class="butCallBack butCallBackPos">Обратный звонок</a>
+        </div>
+        
+        <div class="footCol">
+        <a href="#" class="footIc footIcVideo">Видеоинструкция</a>
+        <a href="#" class="footIc footIcHelp">Помощь и поддержка</a>
+        <a href="#" class="footIc footIcCont">Контакты</a>
+        </div>
+        
+        <div class="footItems footCol">
+        <a href="#">Главная</a>
+        <a href="#">Пользователи</a>
+        <a href="#">Организации</a>
+        <a href="#">Торговые сети</a>
+        <a href="#">Декларации</a>
+        </div>
+        
+        <div class="footItems footCol">
+        <a href="#">Склад</a>
+        <a href="#">Торговый зал</a>
+        <a href="#">Накладные</a>
+        <a href="#">Отчёты и выгрузка</a>
+        <a href="#">Управление</a>
+        </div>
+        
+        
+        
+        
+        
+        <br><br>
+
+        </div>
+        </div>
+             
+        <div class="footerBottom">
+        <div class="container">
+        <p>&copy; 2017 - ООО "Центр информационно-коммуникационных технологий" (ООО Центр ИКТ)</p>
+        </div>
+        </div>
+        
+        </footer>
+                
+        </div>
+        
+        
+       <script type="text/javascript">
+		
+	$(".sticky-header").floatThead({scrollingTop:500});
+
+</script>
+           
+
+</body>
+</html>

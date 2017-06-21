@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Организации - ПОРТАЛ АЛКОСПОТ ЕГАИС</title>
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    
+    <link href="http://centrikt.ru:51003/Content/css?4" rel="stylesheet"/>
+
+    <link href="http://centrikt.ru:51003/Content/Site.css?4" rel="stylesheet"/>
+
+    <link href="http://centrikt.ru:51003/Content/footer.css?4" rel="stylesheet"/>
+
+    <link href="http://centrikt.ru:51003/Content/Front.css?4" rel="stylesheet"/>
+
+    <link href="https://doc.alcospot.ru:8090/Content/callback-request.css" rel="stylesheet" />
+    <script src="http://centrikt.ru:51003/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+    <script src="http://centrikt.ru:51003/bundles/jquery?v=Tx4K2BSWp7cY9xCnAkTCTSdrTSvQU1JIuVxQOqs2VGQ1"></script>
+
+    <script src="http://centrikt.ru:51003/bundles/bootstrap?v=MUnY_uIimctkL2fGkSSjEcSpYTCzEKyy86CNkVOD_Sg1"></script>
+
+    <script src="http://centrikt.ru:51003/Scripts/jquery.scrollUp.min.js"></script>
+
+    
+    <script>
+
+        $(document).ready(function () {
+            $('#org-table').tablesorter({
+                headers: {
+                    4: { sorter: "IktDateFormat" }
+                }
+            });
+
+            $('#org-table').floatThead();
+        });
+
+        $(function () {
+            $('#checkbox-select-all').click(function (event) {
+                var checked = $(this).prop('checked');
+                $('input[id^="check-"]', $('#table-body')).each(function (index, element) {
+                    $(element).prop('checked', checked);
+                });
+            });
+
+            $('#block-selected').click(function (event) {
+                event.preventDefault();
+                BlockSelected(true);
+            });
+
+            $('#unblock-selected').click(function (event) {
+                event.preventDefault();
+                BlockSelected(false);
+            });
+
+        });
+
+        function BlockSelected(block) {
+            var list = $('input[id^="check-"]:checked', $('#table-body'));
+            if (list.length == 0) {
+                DialogInfo('Выберите хотя бы одну организацию');
+                return;
+            }
+
+            var ids = [];
+            list.each(function (index, element) {
+                ids.push($(element).data('id'));
+            });
+
+            $('#input-ids', $('#form-block')).val(ids.join(','));
+            $('#input-block', $('#form-block')).val(block);
+            $('#form-block')[0].submit();
+        }
+    </script>
+
+    <script src="https://doc.alcospot.ru:8090/Scripts/callback-request.js"></script>
+</head>
+<body>
+    <header>
+        <div class="row headRowUp">
+            <div class="container">
+                <div class="col-md-4 colLogo">
+                    <div class="logo">
+                        <a href="#"><img src="http://centrikt.ru:51003/Content/Images/NewFront/logo.svg"></a>
+                    </div>
+                </div>
+                <div class="col-md-8 headLine">
+                    <div class="headTel">8 (499) 653-61-43</div>
+                    <div class="headProblemBut">
+                        <a href="#" class="callBackControl"><span class="glyphicon glyphicon-exclamation-sign"></span>Сообщить о проблеме</a>
+                    </div>
+                        <div class="headLogin">Вы вошли как: Designer | <a href="/Account/Logout">Выйти</a></div>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+<div class="container">
+    <div class="nav1" id="mainmenu">
+
+
+<a href="/Home/Operator">Главная</a>
+
+
+<a href="/User">Пользователи</a><a href="/Organisation">Организации</a><a href="/RetailNetwork">Торговые сети</a>
+
+
+        
+
+            </div>
+</div>
+
+<script>
+    var menu = $('#mainmenu');
+    var activeItemName = 'operator-orgs';
+    if (activeItemName != '') {
+        var activeItem = $('#' + activeItemName, menu);
+        activeItem.addClass('active');
+    }
+</script>
+    </header>
+<div class="bodyBack">
+    
+
+    
+<div class="container">
+
+<div class="myPageHeader">
+    Организации, присутствующие в системе AlcoSpot ЕГАИС
+</div>
+
+
+<div class="form-horizontal">
+    <div class="form-group">
+        <div class="col-sm-4">
+            <a class="btn btn-primary" href="/Organisation/Edit">Добавить новую организацию</a>
+        </div>
+        <div class="space-bottom col-sm-offset-6" style="margin-right: 15px;">
+<form action="/Organisation" method="get">                    <div class="input-group" style="float:right">
+                        <input class="form-control" id="Search" name="Search" placeholder="ИНН, КПП или название организации" type="text" value="" />
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-default">Найти</button>
+                        </span>
+                    </div>
+</form>        </div>
+    </div>
+</div>
+
+
+<div class="space-bottom">
+    <div id="actions" class="well toolbar space-bottom">
+        <span style="padding-right: 15px;">Действия с выделенными:</span>
+        <a href="#" style="padding-right: 15px;" id="block-selected" class="btn btn-default">Заблокировать</a>
+        <a href="#" id="unblock-selected" class="btn btn-default">Разблокировать</a>
+    </div>
+</div>
+
+
+123
+
+<form action="/Organisation/Block" class="collapse" id="form-block" method="post">    <input type="hidden" name="ids" id="input-ids" />
+    <input type="hidden" name="block" id="input-block" />
+</form>
+
+</div>
+</div>
+
+                    <footer>
+            <div class="footerTop">
+                <div class="container">
+                    <div class="col-md-4">
+                        <div><div class="footTel footTelPos">8 (499) 653-61-43</div></div>
+                        <a href="#" class="butCallBack butCallBackPos callBackControl">Сообщить о проблеме</a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="footIc footIcVideo" href="/Help/HowToUse">Видеоинструкция</a>
+                        <a class="footIc footIcHelp" href="/Help/Support">Помощь и поддержка</a>
+                        <a class="footIc footIcCont" href="/Help/Contacts">Контакты</a>
+                    </div>
+
+                        <div class="footItems col-md-4">
+                            <a href="/Home/Operator">Главная</a>
+                            <a href="/User">Пользователи</a>
+                            <a href="/Organisation">Организации</a>
+                            <a href="/RetailNetwork">Торговые сети</a>
+                        </div>
+                    <br><br>
+
+                </div>
+            </div>
+
+            <div class="footerBottom">
+                <div class="container-fluid">
+                    <p>&copy; 2017 - ООО "Центр информационно-коммуникационных технологий" (ООО Центр ИКТ)</p>
+                </div>
+            </div>
+        </footer>
+
+
+<script>
+    $(function () {
+        $.scrollUp();
+    });
+
+    $(function () {
+        var t = new CallbackRequestTopButton($('.callBackControl'), 'egais.alcospot.ru', 'https://doc.alcospot.ru:8090');
+    });
+
+    $(document).ready(function () {
+
+        var docHeight = $(window).height();
+        var footerHeight = $('footer').height();
+        var footerTop = $('footer').position().top + footerHeight;
+
+        if (footerTop < docHeight) {
+            $('footer').css('margin-top', 10 + (docHeight - footerTop) + 'px');
+        }
+    });
+
+</script>
+
+
+
+</body>
+</html>
