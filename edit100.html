@@ -159,18 +159,16 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                                  <table id="stockRests" class="table table-striped tablesorter tablesorter-default">
                                      <thead>
                                      <tr class="tablesorter-headerRow">
-                                             <th data-sorter="false" class="select-all table1MinTd tablesorter-header sorter-false" rowspan="2" data-column="0"><div class="tablesorter-header-inner">
-                                                 <input type="checkbox" id="checkbox-select-all" class="table1Check">
-                                             </div></th>
-                                         <th rowspan="2" class="text-nowrap vertical-bottom tablesorter-header" data-column="1"><div class="tablesorter-header-inner">Алк. код</div></th>
-                                         <th rowspan="2" class="vertical-bottom tablesorter-header" data-column="2"><div class="tablesorter-header-inner">Наименование</div></th>
-                                         <th data-sorter="false" colspan="3" class="text-center tablesorter-header sorter-false" data-column="3"><div class="tablesorter-header-inner">Производитель</div></th>
+                                             <th data-sorter="false" class="select-all table1MinTd tablesorter-header sorter-false" rowspan="2" data-column="0"><input type="checkbox" id="checkbox-select-all" class="table1Check"></th>
+                                         <th rowspan="2" class="text-nowrap vertical-bottom tablesorter-header" data-column="1"><div class="tablesorter-header-inner tableActItemDown">Алк. код</div></th>
+                                         <th rowspan="2" class="vertical-bottom tablesorter-header" data-column="2"><div class="tablesorter-header-inner tableActItemUp">Наименование</div></th>
+                                         <th data-sorter="false" colspan="3" class="text-center tablesorter-header sorter-false" data-column="3">Производитель</th>
                                          <th rowspan="2" class="text-nowrap vertical-bottom tablesorter-header" data-column="6"><div class="tablesorter-header-inner">Справка А</div></th>
                                          <th rowspan="2" class="text-nowrap vertical-bottom tablesorter-header" data-column="7"><div class="tablesorter-header-inner">Справка B</div></th>
                                          <th rowspan="2" class="vertical-bottom text-center tablesorter-header" data-column="8"><div class="tablesorter-header-inner">Количество</div></th>
                                          <th rowspan="2" class="vertical-bottom text-center tablesorter-header" data-column="9"><div class="tablesorter-header-inner">Объём</div></th>
                                          <th rowspan="2" class="vertical-bottom text-center tablesorter-header" data-column="10"><div class="tablesorter-header-inner">Крепость</div></th>
-                                             <th data-sorter="false" rowspan="2" class="text-nowrap vertical-bottom tablesorter-header sorter-false" data-column="11"><div class="tablesorter-header-inner"></div></th>
+                                             <th data-sorter="false" rowspan="2" class="text-nowrap vertical-bottom tablesorter-header sorter-false" data-column="11"></th>
                                      </tr>
                                      <tr class="tablesorter-headerRow">
                                          <th data-column="3" class="tablesorter-header"><div class="tablesorter-header-inner">Название</div></th>
@@ -196,14 +194,16 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                                              <td class="text-center">1</td>
                                              <td class="text-center">5.3</td>
                                              <td class="text-center">5.30</td>
-                                                 <td class="text-nowrap">
+                                                 <td>
+                                                 <div class="numArrows">
                                                      <a data-id="16538115" class="rest-quantity-sub" href="#">
-                                                         <span class="glyphicon glyphicon-minus-sign"></span>
+                                                         <span class="glyphicon glyphicon-triangle-top"></span>
                                                      </a>
                                                      <input type="text" data-id="16538115" data-quantity="1.00" class="rest-quantity form-control input-sm" value="0">
                                                      <a data-id="16538115" class="rest-quantity-add" href="#">
-                                                         <span class="glyphicon glyphicon-plus-sign"></span>
+                                                         <span class="glyphicon glyphicon-triangle-bottom"></span>
                                                      </a>
+                                                     </div>
                                                  </td>
                                          </tr>
                                      </tbody>

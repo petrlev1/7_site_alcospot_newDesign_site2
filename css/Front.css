@@ -359,6 +359,34 @@ h2 {
   padding: 10px 15px !important;
   vertical-align: middle !important; }
 
+.tablesorter-header-inner:after {
+  content: "\25bd";
+  font-size: 12px;
+  padding: 0 0 0 4px; }
+
+.tableActItem, .tableActItemUp, .tableActItemDown {
+  color: #ffffff !important;
+  font-weight: bold !important; }
+  .tableActItem:after, .tableActItemUp:after, .tableActItemDown:after {
+    font-size: 10px !important;
+    padding: 0 0 0 3px; }
+
+.tableActItemUp:after {
+  content: "\25b2" !important; }
+
+.tableActItemDown:after {
+  content: "\25bc" !important; }
+
+.numArrows {
+  display: inline-block;
+  text-align: center;
+  width: 30px; }
+  .numArrows .form-control {
+    display: inline-block;
+    width: 30px;
+    height: 28px;
+    padding: 3px; }
+
 .table1MinTd {
     width: 1px;
 }
