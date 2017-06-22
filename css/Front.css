@@ -420,6 +420,28 @@ h2 {
   height: 35px;
   background-image: url(Images/NewFront/ButList.svg); }
 
+.table1ButAccept {
+  color: #5cb85c !important; }
+
+.table1ButEdit {
+  color: #d9534f !important; }
+
+.gtdNumInput {
+  position: relative;
+  width: 40px;
+  height: 35px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 6px; }
+  .gtdNumInput:focus {
+    position: absolute;
+    right: 0;
+    width: 300px;
+    transition: width ease-out 0.2s; }
+
+.gtdNumInputWidth { width: 70px; }
+
 .status1, .statSuccess, .statError, .statBlue {
     display: block;
     width: 100%;
@@ -645,6 +667,8 @@ footer {
     font-size: 9px;
     width: 20px;
     padding: 3px; }
+    
+    .gtdNumInputWidth { width: 30px; }
 
   .btn-sm {
     font-size: 8px; } }
