@@ -3,78 +3,44 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Организации - ПОРТАЛ АЛКОСПОТ ЕГАИС</title>
-    
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    
-    <link href="http://centrikt.ru:51003/Content/css?4" rel="stylesheet"/>
+    <title>Управление - ПОРТАЛ АЛКОСПОТ ЕГАИС</title>
+    <link href="/Content/css?12" rel="stylesheet"/>
 
-    <link href="http://centrikt.ru:51003/Content/Site.css?4" rel="stylesheet"/>
+    <link href="/Content/Site.css?12" rel="stylesheet"/>
 
-    <link href="http://centrikt.ru:51003/Content/footer.css?4" rel="stylesheet"/>
+    <link href="/Content/footer.css?12" rel="stylesheet"/>
 
-    <link href="http://centrikt.ru:51003/Content/Front.css?4" rel="stylesheet"/>
+    <link href="/Content/Front.css?12" rel="stylesheet"/>
 
     <link href="https://doc.alcospot.ru:8090/Content/callback-request.css" rel="stylesheet" />
-    <script src="http://centrikt.ru:51003/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+    <script src="/Scripts/modernizr-2.8.3.js"></script>
 
-    <script src="http://centrikt.ru:51003/bundles/jquery?v=Tx4K2BSWp7cY9xCnAkTCTSdrTSvQU1JIuVxQOqs2VGQ1"></script>
+    <script src="/Scripts/jquery-2.1.4.js"></script>
+<script src="/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script src="/Scripts/jquery.validate.js"></script>
+<script src="/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="/Scripts/required-if-attribute.js"></script>
 
-    <script src="http://centrikt.ru:51003/bundles/bootstrap?v=MUnY_uIimctkL2fGkSSjEcSpYTCzEKyy86CNkVOD_Sg1"></script>
+    <script src="/Scripts/bootstrap.js"></script>
+<script src="/Scripts/respond.js"></script>
+<script src="/Scripts/bootbox.js"></script>
+<script src="/Scripts/moment.js"></script>
+<script src="/Scripts/moment-with-locales.js"></script>
+<script src="/Scripts/jquery.tablesorter.min.js"></script>
+<script src="/Scripts/bootstrap-datetimepicker.js"></script>
+<script src="/Scripts/jquery.inputmask/inputmask.js"></script>
+<script src="/Scripts/jquery.inputmask/jquery.inputmask.js"></script>
+<script src="/Scripts/jquery.inputmask/inputmask.extensions.js"></script>
+<script src="/Scripts/jquery.inputmask/inputmask.date.extensions.js"></script>
+<script src="/Scripts/jquery.inputmask/inputmask.numeric.extensions.js"></script>
+<script src="/Scripts/jquery.inputmask/inputmask.regex.extensions.js"></script>
+<script src="/Scripts/Controls/editor-date.js"></script>
+<script src="/Scripts/floatThead/jquery.floatThead.js"></script>
+<script src="/Scripts/common.js"></script>
 
-    <script src="http://centrikt.ru:51003/Scripts/jquery.scrollUp.min.js"></script>
+    <script src="/Scripts/jquery.scrollUp.min.js"></script>
 
     
-    <script>
-
-        $(document).ready(function () {
-            $('#org-table').tablesorter({
-                headers: {
-                    4: { sorter: "IktDateFormat" }
-                }
-            });
-
-            $('#org-table').floatThead();
-        });
-
-        $(function () {
-            $('#checkbox-select-all').click(function (event) {
-                var checked = $(this).prop('checked');
-                $('input[id^="check-"]', $('#table-body')).each(function (index, element) {
-                    $(element).prop('checked', checked);
-                });
-            });
-
-            $('#block-selected').click(function (event) {
-                event.preventDefault();
-                BlockSelected(true);
-            });
-
-            $('#unblock-selected').click(function (event) {
-                event.preventDefault();
-                BlockSelected(false);
-            });
-
-        });
-
-        function BlockSelected(block) {
-            var list = $('input[id^="check-"]:checked', $('#table-body'));
-            if (list.length == 0) {
-                DialogInfo('Выберите хотя бы одну организацию');
-                return;
-            }
-
-            var ids = [];
-            list.each(function (index, element) {
-                ids.push($(element).data('id'));
-            });
-
-            $('#input-ids', $('#form-block')).val(ids.join(','));
-            $('#input-block', $('#form-block')).val(block);
-            $('#form-block')[0].submit();
-        }
-    </script>
-
     <script src="https://doc.alcospot.ru:8090/Scripts/callback-request.js"></script>
 </head>
 <body>
@@ -83,7 +49,7 @@
             <div class="container">
                 <div class="col-md-4 colLogo">
                     <div class="logo">
-                        <a href="#"><img src="http://centrikt.ru:51003/Content/Images/NewFront/logo.svg"></a>
+                        <a href="#"><img src="/Content/Images/NewFront/logo.svg"><span class="version">v&zwnj;2.5.6382</span></a>
                     </div>
                 </div>
                 <div class="col-md-8 headLine">
@@ -96,27 +62,80 @@
             </div>
         </div>
 
-        
 
 
 <div class="container">
-    <div class="nav1" id="mainmenu">
+    <div class="col-md-9">
+        <div class="nav1" id="mainmenu">
 
 
 <a href="/Home/Operator">Главная</a>
 
 
-<a href="/User">Пользователи</a><a href="/Organisation">Организации</a><a href="/RetailNetwork">Торговые сети</a>
+    <div class="nav1SubMenuHover">
+        <a href="/Home/Operator" class="nav1SubItem">Административные функции</a>
+        <div class="nav1SubMenu">
+                <a href="/User">Пользователи</a>
+                <a href="/Organisation">Организации</a>
+                <a href="/RetailNetwork">Торговые сети</a>
+        </div>
+    </div>
 
-
-        
-
-            </div>
+<div class="nav1SubMenuHover">
+    <a href="/StockRests" class="nav1SubItem">Склад</a>
+    <div class="nav1SubMenu">
+            <a href="/StockRests">Склад</a>
+            <a href="/ActWriteOffStock">Акты списания продукции</a>
+            <a href="/ActChargeOnStock">Акты постановки на баланс</a>
+            <a href="/ActTransferToShop">Акты перемещения продукции</a>
+    </div>
+</div>
+<div class="nav1SubMenuHover">
+    <a href="/ShopRests" class="nav1SubItem">Торговый зал</a>
+    <div class="nav1SubMenu">
+        <a href="/ShopRests">Торговый зал</a>
+        <a href="/ActWriteOffShop">Акты списания продукции</a>
+        <a href="/ActChargeOnShop">Акты постановки на баланс</a>
+        <a href="/ActTransferToStock">Акты перемещения продукции</a><a href="/Inventory">Инвентаризация</a>
+    </div>
+</div>
+<div class="nav1SubMenuHover">
+    <a href="/IncomingWayBill/Index/All" class="nav1SubItem">Накладные</a>
+    <div class="nav1SubMenu">
+        <a href="/IncomingWayBill/Index/All">Входящие товаро-транспортные накладные</a>
+        <a href="/OutgoingWayBill/Index/All">Исходящие товаро-транспортные накладные</a>
+    </div>
 </div>
 
+<a href="/Declaration/Simple">Декларации</a>    <div class="nav1SubMenuHover">
+        <a href="/Reports" class="nav1SubItem"> Отчеты и выгрузка</a>
+        <div class="nav1SubMenu">
+            <a href="/Reports?mode=Reports">Отчеты</a>
+            <a href="/Reports?mode=Exports">Выгрузка данных</a>
+        </div>
+    </div>
+<a href="/Utm">Управление</a>
+        </div>
+    </div>
+
+
+                                                    <div class="col-md-3">
+                                <div class="nav1ChangeOrg">
+                                    <span class="nav1ChangeOrgLink">
+                                        <nobr>
+                                            ООО Центр ИКТ, КПП 772501001<span class="glyphicon glyphicon-chevron-down"></span>
+                                        </nobr>
+                                        <ul>
+                                            <a href="/Subdivision/ChooseSubdivision">Выбрать другое подразделение</a>
+                                            <a href="/Organisation/ClearCurrentOrganisation">Выйти из организации</a>
+                                        </ul>
+                                    </span>
+                                </div>
+                            </div>
+ </div>
 <script>
     var menu = $('#mainmenu');
-    var activeItemName = 'operator-orgs';
+    var activeItemName = 'operator-home';
     if (activeItemName != '') {
         var activeItem = $('#' + activeItemName, menu);
         activeItem.addClass('active');
@@ -127,67 +146,82 @@
     
 
     
+
+
 <div class="container">
+    <div class="col-md-12"><h1>Управление Порталом AlcoSpot ЕГАИС</h1></div>
 
-<div class="myPageHeader">
-    Организации, присутствующие в системе AlcoSpot ЕГАИС
-</div>
-
-
-<div class="form-horizontal">
-    <div class="form-group">
-        <div class="col-sm-4">
-            <a class="btn btn-primary" href="/Organisation/Edit">Добавить новую организацию</a>
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-sm-2 col-fixed" for="AccountType">Тип учетной записи</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">
+                    Операторы
+                </p>
+            </div>
         </div>
-        <div class="space-bottom col-sm-offset-6" style="margin-right: 15px;">
-<form action="/Organisation" method="get">                    <div class="input-group" style="float:right">
-                        <input class="form-control" id="Search" name="Search" placeholder="ИНН, КПП или название организации" type="text" value="" />
-                        <span class="input-group-btn">
-                            <button type="submit" class="btn btn-default">Найти</button>
-                        </span>
-                    </div>
-</form>        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2 col-fixed" for="OrganisationCount">Всего организаций</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">
+                    746
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2 col-fixed" for="RetailNetworkCount">Всего торговых сетей</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">
+                    16
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-2 col-fixed" for="RetailNetworkOrgCount">Всего организаций в торговых сетях</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">
+                    121
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-offset-1">
+        <a href="/Home/ExportStatisticsToExcel" id="export-stats-to-excel" class="btn btn-default blue-Btn">Отчёт активности пользователей и организаций ЕГАИС</a>
     </div>
 </div>
 
-
-<div class="space-bottom">
-    <div id="actions" class="well toolbar space-bottom">
-        <span style="padding-right: 15px;">Действия с выделенными:</span>
-        <a href="#" style="padding-right: 15px;" id="block-selected" class="btn btn-default">Заблокировать</a>
-        <a href="#" id="unblock-selected" class="btn btn-default">Разблокировать</a>
-    </div>
-</div>
-
-
-123
-
-<form action="/Organisation/Block" class="collapse" id="form-block" method="post">    <input type="hidden" name="ids" id="input-ids" />
-    <input type="hidden" name="block" id="input-block" />
-</form>
-
-</div>
 </div>
 
                     <footer>
             <div class="footerTop">
                 <div class="container">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div><div class="footTel footTelPos">8 (499) 653-61-43</div></div>
                         <a href="#" class="butCallBack butCallBackPos callBackControl">Сообщить о проблеме</a>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <a class="footIc footIcVideo" href="/Help/HowToUse">Видеоинструкция</a>
                         <a class="footIc footIcHelp" href="/Help/Support">Помощь и поддержка</a>
                         <a class="footIc footIcCont" href="/Help/Contacts">Контакты</a>
                     </div>
 
-                        <div class="footItems col-md-4">
+                        <div class="footItems col-md-3">
                             <a href="/Home/Operator">Главная</a>
                             <a href="/User">Пользователи</a>
                             <a href="/Organisation">Организации</a>
                             <a href="/RetailNetwork">Торговые сети</a>
-                        </div>
+<a href="/Declaration/Simple">Декларации</a>                        </div>
+                             <div class="footItems col-md-3">
+                                 <a href="/StockRests">Склад</a>
+                                 <a href="/ShopRests">Торговый зал</a>
+                                 <a href="/IncomingWayBill/Index">Накладные</a>
+                                 <a href="/Reports?mode=Reports">Отчёты и выгрузка</a>
+                                 <a href="/Utm">Управление</a>
+                             </div>
                     <br><br>
 
                 </div>
