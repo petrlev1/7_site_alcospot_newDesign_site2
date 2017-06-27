@@ -1,0 +1,895 @@
+﻿.search {
+    border: 1px solid #2185C5;
+}
+
+body {
+    padding-right: 0;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.modal-body {
+    padding: 15px;
+}
+
+.loading {
+    background: transparent url("Images/NewFront/hourglass.gif") 50% 50% no-repeat;
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.validation-summary-errors > ul {
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.form-control {
+    color: black;
+    border: 1px solid #6EC9EF;
+}
+
+.form-control-static {
+    min-height: 0;
+    padding-bottom: 0;
+}
+
+
+#logoutMenu {
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    display: inline-block;
+}
+
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+}
+
+
+.space-bottom {
+    margin-bottom: 15px;
+}
+
+.space-top {
+    margin-top: 15px;
+}
+
+.space-top-big {
+    margin-top: 20px;
+}
+
+.space-left {
+    margin-left: 15px;
+}
+
+.space-right {
+    margin-right: 15px;
+}
+
+.space-bottom-big {
+    margin-bottom: 30px;
+}
+
+.grayText {
+    color: #999;
+}
+
+.post-link {
+    /*Не удалять*/
+}
+
+#pleaseWaitDialog h3 {
+    margin: 0;
+}
+
+#pleaseWaitDialog .progress {
+    margin-bottom: 0;
+}
+
+.date-editor {
+    /* не удалять */
+}
+
+.decimal-positive-editor {
+    /* не удалять */
+}
+
+.percentage-editor {
+    /* не удалять */
+}
+
+.text-break-all {
+    word-break: break-all;
+}
+
+.my-bootbox-alert {
+    position: relative;
+    top: 20px;
+}
+
+.my-bootbox-confirm {
+    margin-bottom: 0 !important;
+}
+
+.full-width {
+    width: 100%
+}
+
+td.table-column-icon {
+    font-size: 18px;
+    padding-bottom: 0px !important;
+}
+
+/*LOGIN.CSHTML*/
+
+#login-form {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-new-form {
+    border-style: solid;
+    border-color: #1874C1;
+    border-width: 2px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 0 0 20px rgba(40,97,150,0.2);
+    -webkit-box-shadow: 0 0 20px rgba(40,97,150,0.2);
+}
+
+.login-text {
+    color: #4D4D4D;
+}
+
+    .login-text p, li {
+        font-size: 16px;
+    }
+
+    .login-text p {
+        margin-bottom: 20px;
+        line-height: 23px;
+    }
+
+    .login-text li {
+        margin-top: 10px;
+        color: #1874C1;
+    }
+
+        .login-text li span {
+            color: #4D4D4D;
+        }
+
+#login-form .login-title p {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.free-try {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+    .free-try input {
+        margin-right: 20px;
+        margin-bottom: 10px;
+        font-size: 15px;
+        margin-left: 0;
+    }
+
+    .free-try .try {
+        margin-top: 15px;
+        margin-right: 20px;
+    }
+
+    .free-try .sign-up {
+        margin-top: 15px;
+    }
+
+/*TABLESORTER */
+
+.tablesorter-default {
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+    .tablesorter-default th, .tablesorter-default thead td {
+        font-weight: bold;
+        border-collapse: collapse;
+        font-size: 15px;
+        padding: 22px;
+    }
+
+
+    .tablesorter-default tfoot td {
+        border: 0;
+    }
+
+    .tablesorter-default .header,
+    .tablesorter-default .tablesorter-header {
+        background-image: url(/Content/Icons/arrows.gif);
+        background-position: center right;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        white-space: normal;
+        padding: 4px 20px 4px 4px;
+    }
+
+    .tablesorter-default thead .headerSortUp,
+    .tablesorter-default thead .tablesorter-headerSortUp,
+    .tablesorter-default thead .tablesorter-headerAsc {
+        background-image: url(/Content/Icons/arrowUp.gif);
+        border-bottom: #000 2px solid;
+    }
+
+    .tablesorter-default thead .headerSortDown,
+    .tablesorter-default thead .tablesorter-headerSortDown,
+    .tablesorter-default thead .tablesorter-headerDesc {
+        background-image: url(/Content/Icons/arrowDown.gif);
+        border-bottom: #000 2px solid;
+    }
+
+    .tablesorter-default thead .sorter-false {
+        background-image: none;
+        cursor: default;
+        padding: 4px;
+    }
+
+    .tablesorter-default tfoot .tablesorter-headerSortUp, .tablesorter-default tfoot .tablesorter-headerSortDown, .tablesorter-default tfoot .tablesorter-headerAsc, .tablesorter-default tfoot .tablesorter-headerDesc {
+        border-top: #000 2px solid;
+    }
+
+    .tablesorter-default td {
+        padding: 4px;
+        vertical-align: top;
+    }
+
+    .modal-open {
+        padding-right: 0;
+    }
+    .tablesorter-default tbody > tr.hover > td,
+    .tablesorter-default tbody > tr:hover > td,
+    .tablesorter-default tbody > tr.even:hover > td,
+    .tablesorter-default tbody > tr.odd:hover > td {
+        color: #000;
+    }
+
+        .tablesorter-default .tablesorter-processing {
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        background-image: url(/Content/Icons/ajax-loader.gif) !important;
+    }
+
+
+/* MASTER */
+.version {
+    color: lightgrey;
+    font-size: x-small;
+    display: inline-block
+}
+
+.master-title {
+    display: inline-block;
+    position: relative;
+    top: 5px;
+    color: #1B75BB;
+}
+/* ERROR PAGE */
+.error-page-container {
+    display: block;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.error-code {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: red;
+}
+
+.error-message {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.error-header {
+    font-size: 20px;
+
+}
+
+.error-number {
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-decoration: underline;
+}
+
+/* HELP */
+
+.how-to-use-center {
+    margin: 0 auto;
+    width: 50%;
+}
+
+#video-container {
+    position: relative;
+    width: 50%;
+    /*height: 35%;*/
+    padding-bottom: 30.00%;
+}
+
+#video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+iframe {
+    border: 0;
+}
+
+/* КОНТАКТЫ */
+.inputSize1 {
+    font-size: 22px !important;
+    padding: 25px 15px;
+    color: #000000;
+}
+
+.inputSizeTextaria {
+    padding: 15px;
+    font-size: 16px;
+    color: #000000;
+}
+
+form h3 {
+    font-size: 16px;
+    color: #666666;
+    margin: 25px 0 5px 0;
+}
+
+.contRight {
+    padding: 5px 50px;
+    background-color: #F8F8F8;
+}
+
+    .contRight h3 {
+        margin: 30px 0 19px 0
+    }
+
+.contRBcolor {
+    background-color: #F8F8F8;
+}
+
+.contRight p {
+    position: relative;
+    font-size: 18px;
+}
+
+.icLine {
+    position: relative;
+    font-size: 18px;
+    margin: 16px 0;
+    padding: 0 0 0 40px
+}
+
+.icon1 {
+    position: absolute;
+    font-size: 26px;
+    margin: 0 0 0 -40px
+}
+
+.contacts_iframe_map {
+    position: relative;
+    width: 102%;
+    height: 600px;
+    margin-left: -15px;
+    overflow: hidden;
+    top: 0;
+    z-index: 0;
+    border-top: 5px #F8F8F8 solid;
+    border-bottom: 1px #ffffff solid;
+}
+
+/* ДОКУМЕНТЫ */
+
+.docList {
+    padding: 30px 30px 10px 30px;
+    border-bottom: 1px #e7e7e7 solid;
+    transition: all ease-out 0.3s;
+}
+
+    .docList:hover {
+        background-color: #f8f8f8;
+    }
+
+    .docList h3 {
+        margin: 0 0 15px 0;
+    }
+
+    .docList p {
+        margin: 0 0 15px 0;
+        font-size: 1.1em;
+    }
+
+.docsLinks {
+    margin: 10px 0
+}
+
+    .docsLinks a {
+        position: relative;
+        display: inline-block;
+        font-size: 1.1em;
+        padding: 10px 10px;
+        margin: 1px 30px 1px 0
+    }
+
+    /* Tooltip */
+    
+    .tooltip {
+        left: 150px;
+    }
+
+
+.docsLinks .tooltip > .tooltip-inner {
+    background-color: #0075BD;
+    color: #FFFFFF;
+    padding: 15px;
+    font-size: 16px;
+    max-width: none;
+    white-space: nowrap
+}
+
+    .docsLinks a:hover {
+        color: #0075BD;
+    }
+
+    .docsLinks .tooltip.top > .tooltip-arrow {
+        border-top: 5px solid #0075BD;
+    }
+
+/* ВЫПАДАЮЩЕЕ МЕНЮ */
+
+.dropdown:hover .main {
+    display: block;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+    .dropdown-submenu > .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -6px;
+        margin-left: -1px;
+        -webkit-border-radius: 0 6px 6px 6px;
+        -moz-border-radius: 0 6px 6px;
+        border-radius: 0 6px 6px 6px;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-submenu > a:after {
+        display: block;
+        content: " ";
+        float: right;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 5px 0 5px 5px;
+        border-left-color: #ccc;
+        margin-top: 5px;
+        margin-right: -10px;
+    }
+
+    .dropdown-submenu:hover > a:after {
+        border-left-color: #fff;
+    }
+
+    .dropdown-submenu.pull-left {
+        float: none;
+    }
+
+        .dropdown-submenu.pull-left > .dropdown-menu {
+            left: -100%;
+            margin-left: 10px;
+            -webkit-border-radius: 6px 0 6px 6px;
+            -moz-border-radius: 6px 0 6px 6px;
+            border-radius: 6px 0 6px 6px;
+        }
+
+/* ПОМОЩЬ */
+
+.helpDiv {
+    background-color: #B3E6FF;
+    border: 1px #66CCFF solid;
+    margin: 30px 0 0 0;
+    padding: 20px 30px 10px 30px
+}
+
+    .helpDiv h3 {
+        margin: 0 0 15px 0;
+    }
+
+    .helpDiv .btn {
+        margin: 0 40px 20px 0
+    }
+
+.helpBlock2 {
+    font-size: 26px;
+    text-align: center;
+    margin: 20px 0 0 0;
+    padding: 5px 0;
+}
+
+.helpQuest {
+    margin: 30px 0 0 0;
+}
+
+    .helpQuest h2 {
+        font-size: 26px;
+        margin: 0 0 20px 0
+    }
+
+    .helpQuest label {
+        display: block;
+        font-weight: 100;
+        margin: 0 0 15px 0
+    }
+
+    .helpQuest a {
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        padding: 0 0 5px 0;
+        border-bottom: 1px #CCCCCC dotted
+    }
+
+    .helpQuest strong {
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        padding: 0 0 5px 0;
+        border-bottom: 1px #CCCCCC dotted;
+        color: #337ab7
+    }
+
+    .helpQuest span {
+        display: block;
+        margin: 9px 0 0 0;
+        max-height: 0;
+        overflow: hidden;
+        color: #4D4D4D;
+    }
+
+    .helpQuest input {
+        display: none
+    }
+
+        .helpQuest input:checked + span {
+            max-height: 1000px;
+            transition: all ease 5s;
+        }
+
+.allQuest {
+    display: none;
+}
+
+.helpQuest .allQuestCheck:checked + .allQuest {
+    display: block;
+}
+
+.helpInst {
+    margin: 40px 0 0 0
+}
+
+@media (max-width: 768px) {
+    .helpDiv .btn {
+        display: block;
+        width: 100%
+    }
+}
+
+/* КЛИЕНТ */
+
+.alert-header {
+    font-size: 16px;
+}
+
+.alert-description {
+    margin-top: 10px;
+}
+
+#final-ok {
+    font-size: 20px;
+    padding-left: 15px;
+}
+
+/* ОРГАНИЗАЦИИ */
+
+#orgTable {
+    margin-top: 30px;
+    width: auto;
+    min-width: 500px;
+}
+
+.toolbar {
+    background-color: #dbf4ff;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+/*ВХОДЯЩИЕ НАКЛАДНЫЕ*/
+
+
+.ttn-New {
+    color: #333;
+}
+
+.ttn-ActSended, .ttn-ActAccepted, .ttn-ActDeliveredSuccess {
+    color: orange;
+}
+
+.ttn-TtnAccepted {
+    color: green;
+}
+
+.ttn-ActDeclined, .ttn-ActDeliveredError, .ttn-TtnDeclined {
+    color: red;
+}
+
+.ttnRow {
+    cursor: pointer;
+}
+
+
+td.table-column-action {
+    font-size: 15px;
+}
+
+.btn-send-to-shop {
+}
+
+.btn-show-send-error {
+}
+
+.myHeader2 {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.value-text {
+    font-weight: normal;
+    color: black;
+}
+
+#wayBillTable td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+    #wayBillTable td.text-left {
+        text-align: left;
+    }
+
+#wayBillTable th {
+    vertical-align: middle;
+    text-align: center;
+}
+
+#commands a {
+    margin-right: 20px;
+}
+
+.positionButtons td {
+    padding: 2px;
+}
+
+.positionStatus {
+    white-space: nowrap;
+}
+
+    .positionStatus .btn-default {
+        background-color: #CCCCCC;
+    }
+
+#actComment {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+/*input.gtd-editor {
+    width: 235px;
+}
+
+    input.gtd-editor.input-validation-error {
+        background-color: #f7b2b2;
+}*/
+
+/* ИСХОДЯЩИЕ НАКЛАДНЫЕ */
+   .actionsCell a {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#myForm h4 {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+#myForm .field-validation-error {
+    margin-top: 5px;
+    display: block;
+}
+
+
+/* ОСТАТКИ */
+
+#form-rests .vertical-bottom {
+    vertical-align: bottom;
+}
+
+#form-rests .rest-quantity {
+    /*width: 60px;
+    display: inline-block;*/
+}
+
+#form-rests .rest-quantity-sub {
+    /*color: black;*/
+}
+
+#form-rests .rest-quantity-add {
+    /*color: black;*/
+}
+
+
+/*  АКТЫ  */
+
+.act {
+    display: block;
+}
+
+#myForm h4 {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.field-validation-error {
+    margin-top: 5px;
+    display: block;
+}
+
+/*  ИНВЕНТАРИЗАЦИЯ  */
+
+/*#inventory-table td {
+    vertical-align: baseline;
+}
+
+    #inventory-table td.select-this > input {
+        vertical-align: top;
+    }
+
+#inventory-table th {
+    vertical-align: baseline;
+}
+
+#inventory th.select-all > input {
+    vertical-align: top;
+}
+
+#inventory-table .no-top {
+    border-top: none !important;
+}
+
+#inventory-table .no-bottom {
+    border-bottom: none !important;
+}*/
+
+.quantity-fact {
+    display: inline-block;
+    min-width: 95px;
+}
+
+.quantity-chargeon {
+    display: inline-block;
+    min-width: 95px;
+}
+
+.quantity-writeoff {
+    display: inline-block;
+    min-width: 95px;
+}
+
+.link-delete {
+}
+
+.add-inventory-position {
+}
+
+tr.odd-row {
+    background-color: #f9f9f9;
+}
+
+.parameter-required {
+    color: #b94a48;
+    font-weight: normal;
+}
+
+.mini-hint {
+    font-size: 24px;
+    vertical-align: top;
+    padding-top: 4px;
+}
+
+/* ОРГАНИЗАЦИЯ */
+
+.subdivisionsTable {
+    margin-top: 10px;
+}
+
+    .subdivisionsTable th, .subdivisionsTable td {
+        padding-top: 3px !important;
+        padding-bottom: 3px !important;
+        vertical-align: middle !important;
+    }
+
+    .subdivisionsTable th {
+        background-color: #eee;
+    }
+
+    .subdivisionsTable td .btn-sm {
+        padding-top: 3px !important;
+        padding-bottom: 3px !important;
+    }
+
+.subdivisions {
+    margin-top: 10px;
+}

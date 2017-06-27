@@ -7,6 +7,7 @@
 <title>Untitled Document</title>
 
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/Site.css" rel="stylesheet" type="text/css">
 <link href="css/Front.css" rel="stylesheet" type="text/css">
 
 <script type='text/javascript' src='js/jquery-3.2.1.min.js'></script>
@@ -39,7 +40,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
 <div class="headRowUp">
 <div class="container">
 <div class="col-md-4 colLogo">
-  <div class="logo"><a href="#"><img src="css/Images/logo.svg"></a><span class="version">v‌2.7.11</span></div>
+  <div class="logo"><a href="#"><img src="css/Images/NewFront/logo.svg"></a><span class="version">v‌2.7.11</span></div>
   </div>
   <div class="col-md-8 headLine"><div class="headTel">8 (499) 653-61-43</div>
     <div class="headProblemBut"><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span>Сообщить о проблеме</a></div>
@@ -122,6 +123,134 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
   <div class="container">
     <div class="breadcrumb2"><a href="#">Главная</a>/<a href="#">Торговый зал</a>/<a href="#">Товарно-транспортные накладные</a></div>
     
+    <br>
+
+
+<div class="col-md-12"><h1>Редактирование позиции акта постановки на баланс</h1></div>
+        <form method="POST" class="form-horizontal" id="myForm">
+
+        <input data-val="true" data-val-number="The field PositionId must be a number." id="PositionId" name="PositionId" type="hidden" value="24633" />
+        <div class="form-group">
+            <label class="control-label col-sm-4">Количество</label>
+            <div class="col-sm-4">
+                <input class="form-control decimal-editor" data-val="true" data-val-number="The field Quantity must be a number." data-val-range="Должно быть больше 0" data-val-range-max="2147483647" data-val-range-min="1" data-val-required="Заполните поле" id="Quantity" name="Quantity" type="text" value="99.00000" />
+            </div>
+            <div class="col-sm-4">
+                <span class="field-validation-valid" data-valmsg-for="Quantity" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="col-md-12"><h2>Сведения о продукции</h2></div>
+        <div class="form-group">
+            <label class="control-label col-sm-4">Идентификатор</label>
+            <div class="col-sm-4">
+                <input class="form-control" id="Identity" name="Identity" readonly="true" type="text" value="8b6af523-e39c-45ad-a7a2-26d78928c29a" />
+            </div>
+            <div class="col-sm-4">
+                <span class="field-validation-valid" data-valmsg-for="Identity" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-4">Тип продукции</label>
+            <div class="col-sm-4">
+                <select class="form-control" data-val="true" data-val-required="Заполните поле" id="ProductType" name="ProductType"><option selected="selected" value="0">АП</option>
+<option value="1">ССП</option>
+<option value="2">ССНП</option>
+<option value="3">Спирт</option>
+</select>
+            </div>
+            <div class="col-sm-4">
+                <span class="field-validation-valid" data-valmsg-for="ProductType" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-4">Полное наименование продукции</label>
+            <div class="col-sm-4">
+                <input class="form-control" data-val="true" data-val-required="Заполните поле" id="ProductFullName" name="ProductFullName" type="text" value="Вино географического наименования категории &quot;ДОКГ&quot; регион Тоскана белое сухое &quot;Верначча Ди Сан Джиминьано&quot;" />
+            </div>
+            <div class="col-sm-4">
+                <span class="field-validation-valid" data-valmsg-for="ProductFullName" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-4">Краткое наименование продукции</label>
+            <div class="col-sm-4">
+                <input class="form-control" data-val="true" data-val-required="Заполните поле" id="ProductShortName" name="ProductShortName" type="text" value="Вино географического наименования категории &quot;ДОКГ&quot; регион Тоскана белое сухое &quot;Верначча Ди Сан Джиминьано&quot;" />
+            </div>
+            <div class="col-sm-4">
+                <span class="field-validation-valid" data-valmsg-for="ProductShortName" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-4">Код продукции в ЕГАИС</label>
+            <div class="col-sm-4">
+                <input class="form-control" data-val="true" data-val-required="Заполните поле" id="ProductAlcCode" name="ProductAlcCode" type="text" value="0150382000004260660" />
+            </div>
+            <div class="col-sm-4">
+                <span class="field-validation-valid" data-valmsg-for="ProductAlcCode" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-4">Ёмкость</label>
+            <div class="col-sm-4">
+                <div class="input-group">
+                    <input class="form-control decimal-editor" data-val="true" data-val-number="The field Capacity must be a number." data-val-range="Должно быть больше 0" data-val-range-max="2147483647" data-val-range-min="1" data-val-required="Заполните поле" id="Capacity" name="Capacity" type="text" value="0.75000" />
+                    <span class="input-group-addon">л</span>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <span class="field-validation-valid" data-valmsg-for="Capacity" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-4">Содержание этилового спирта</label>
+            <div class="col-sm-4">
+                <div class="input-group">
+                    <input class="form-control percentage-editor" data-val="true" data-val-number="The field ProductAlcVolume must be a number." data-val-range="Должно быть больше 0" data-val-range-max="2147483647" data-val-range-min="1" data-val-required="Заполните поле" id="ProductAlcVolume" name="ProductAlcVolume" type="text" value="12.50" />
+                    <span class="input-group-addon">%</span>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <span class="field-validation-valid" data-valmsg-for="ProductAlcVolume" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-4">Производитель</label>
+            <div class="col-sm-4 findPartnerTd">
+                <div class="input-group">
+                    <input data-val="true" data-val-number="The field ProducerId must be a number." id="ProducerId" name="ProducerId" type="hidden" value="42968" />
+                    <input class="form-control" id="ProducerName" name="ProducerName" readonly="true" type="text" value="&quot;Кьянти Трамбусти&quot; С.Р.Л." />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <span class="field-validation-valid" data-valmsg-for="ProducerName" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4">Код вида продукции</label>
+            <div class="col-sm-4">
+              <input class="form-control" data-val="true" data-val-required="Заполните поле" id="ProductVCode" name="ProductVCode" type="text" value="402" />
+            </div>
+            <div class="col-sm-4">
+                <span class="field-validation-valid" data-valmsg-for="ProductVCode" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+                <a class="btn btn-default" href="/ActChargeOnShop/EditHeader/2403">Отмена</a>
+            </div>
+        </div>
+    </form>
+    
+    <br>
+
+    
     <div class="col-md-8"><h1>Входящие товарно-транспортные накладные</h1></div>
     <div class="col-md-4" style="text-align:right"><div class="expUserItem"><a href="#"><span class="glyphicon glyphicon-wrench"></span>Режим опытного пользователя</a></div></div>
     <div class="col-md-12 descText">Товарно-транспортная накладная (ТТН) предназначена для учёта движения товарно-материальных ценностей (ТМЦ) при их перемещении с участием транспортных средств и является основанием для списания ТМЦ у грузоотправителя и оприходования их у грузополучателя. Как правило, оформляется грузоотправителем. Однако по согласованию сторон документ может составляться и перевозчиком.<br>
@@ -154,6 +283,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     
     <div class="container">
     
+    
     <br>
 
 <div class="table1">
@@ -167,7 +297,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                         <tbody>
                                     <tr>
                                         <td>
-                                                <a href="#" id="org_7737550016" onclick="selectOrg(this, event, '7737550016')">Общество с ограниченной ответственностью "МАРШАЛ"</a>
+                                                <a href="#" id="org_7737550016" onClick="selectOrg(this, event, '7737550016')">Общество с ограниченной ответственностью "МАРШАЛ"</a>
                                                 <div class="subdivisions collapse" style="display: block;">
 
 
@@ -179,11 +309,11 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
         </tr>
             <tr>
                 <td>
-                    <a href="#" onclick="selectSubdivision('7737550016', '772401001'); return false;">г. Москва, ул. Маршала Захарова, д. 6 корпус 1</a>
+                    <a href="#" onClick="selectSubdivision('7737550016', '772401001'); return false;">г. Москва, ул. Маршала Захарова, д. 6 корпус 1</a>
                 </td>
                 <td>772401001</td>
                 <td>
-                    <a href="#" class="btn btn-sm btn-default" onclick="selectSubdivision('7737550016', '772401001'); return false;">Выбрать</a>
+                    <a href="#" class="btn btn-sm btn-default" onClick="selectSubdivision('7737550016', '772401001'); return false;">Выбрать</a>
                 </td>
             </tr>
     </tbody></table>
@@ -193,14 +323,14 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                                     </tr>
                                     <tr>
                                         <td>
-                                                <a href="#" id="org_7709860986" onclick="selectOrg(this, event, '7709860986')">Общество с ограниченной ответственностью "Пчелка+"</a>
+                                                <a href="#" id="org_7709860986" onClick="selectOrg(this, event, '7709860986')">Общество с ограниченной ответственностью "Пчелка+"</a>
                                                 <div class="subdivisions collapse"></div>
                                         </td>
                                         <td>7709860986</td>
                                     </tr>
                                     <tr>
                                         <td>
-                                                <a href="#" id="org_5003043280" onclick="selectOrg(this, event, '5003043280')">Общество с ограниченной ответственностью Ника Плюс</a>
+                                                <a href="#" id="org_5003043280" onClick="selectOrg(this, event, '5003043280')">Общество с ограниченной ответственностью Ника Плюс</a>
                                                 <div class="subdivisions collapse"></div>
                                         </td>
                                         <td>5003043280</td>
@@ -225,14 +355,14 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                                     </tr>
                                     <tr>
                                         <td>
-                                                <a href="#" id="org_7730094445" onclick="selectOrg(this, event, '7730094445')">ООО Виджил-Инвест</a>
+                                                <a href="#" id="org_7730094445" onClick="selectOrg(this, event, '7730094445')">ООО Виджил-Инвест</a>
                                                 <div class="subdivisions collapse"></div>
                                         </td>
                                         <td>7730094445</td>
                                     </tr>
                                     <tr>
                                         <td>
-                                                <a href="#" id="org_7725753653" onclick="selectOrg(this, event, '7725753653')">ООО Центр ИКТ</a>
+                                                <a href="#" id="org_7725753653" onClick="selectOrg(this, event, '7725753653')">ООО Центр ИКТ</a>
                                                 <div class="subdivisions collapse"></div>
                                         </td>
                                         <td>7725753653</td>
