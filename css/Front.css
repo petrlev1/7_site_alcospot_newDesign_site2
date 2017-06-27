@@ -1,4 +1,4 @@
-﻿* {
+* {
     margin: 0;
     padding: 0;
 }
@@ -514,6 +514,7 @@ h2 {
     .table2 li {
         display: table-cell;
         padding: 8px 15px;
+        font-size: 12px;
     }
 
 .table2Head {
@@ -543,12 +544,13 @@ h2 {
     border-bottom: 1px #75C4EA dashed;
 }
 
-    .DropDownBlockLink:before {
-        content: "+ ";
-        font-size: 21px;
-        font-weight: 100;
-        color: #75C4EA;
-    }
+  .DropDownBlockLink:before {
+  content: "+ ";
+  position: absolute;
+  margin: -5px 0 0 -22px;
+  font-size: 21px;
+  font-weight: 100;
+  color: #75C4EA; }
 
 input.DropDownBlockCheck:checked ~ .DropDownBlockCont {
     max-height: 1000px;
