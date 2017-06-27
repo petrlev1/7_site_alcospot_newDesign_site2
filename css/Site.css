@@ -1,4 +1,4 @@
-﻿.search {
+.search {
     border: 1px solid #2185C5;
 }
 
@@ -51,9 +51,15 @@ input[type="checkbox"].input-validation-error {
     list-style-type: none;
 }
 
+.control-label { font-weight: 100; font-size: 16px; }
+
+.form-group { border-bottom: 1px #dcf0fa solid; padding: 15px 0; margin-bottom: 0; }
+
 .form-control {
+    font-size: 16px;
     color: black;
     border: 1px solid #6EC9EF;
+    padding: 20px 12px;
 }
 
 .form-control-static {

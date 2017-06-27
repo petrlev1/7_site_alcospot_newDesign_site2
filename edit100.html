@@ -124,6 +124,131 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
     <div class="breadcrumb2"><a href="#">Главная</a>/<a href="#">Торговый зал</a>/<a href="#">Товарно-транспортные накладные</a></div>
     
     <br>
+    
+    <div class="col-md-8"><h1>Торговый зал (регистр №2)</h1></div>
+
+        <div class="col-md-4" style="text-align: right">
+            <div class="expUserItem">
+                <a href="/Client/SwitchMode?returnUrl=%2FShopRests"><span class="glyphicon glyphicon-wrench"></span>Режим опытного пользователя</a>
+            </div>
+        </div>
+    <div class="col-md-12 descText">
+        Продажа алкогольной продукции осуществляется путем перемещения со склада, а затем уменьшения остатков соответствующей продукции на регистре №2 (требуется кассовое ПО). Остатки всегда актуальны на конкретную дату.
+    </div>
+</div>
+
+
+
+<form action="/ShopRests/Update" data-ajax="true" data-ajax-failure="onAjaxFailure" data-ajax-method="Post" data-ajax-mode="replace-with" data-ajax-update="#header-form" id="header-form" method="post">        <div class="container">
+            <div class="col-md-12">
+                <p>
+                    Актуальная дата остатков:
+                    <b>10.05.2017 09:46:15</b>
+                </p>
+                    <button type="submit" class="btn btn-primary">Обновить</button>
+            </div>
+        </div>
+</form>
+
+
+<div class="container">
+    
+<form action="/ShopRests/List" class="form-horizontal" data-ajax="true" data-ajax-failure="onAjaxFailure" data-ajax-loading="#rests-loader" data-ajax-method="Get" data-ajax-mode="replace-with" data-ajax-success="onRestFiltersSuccess" data-ajax-update="#form-rests" id="form-rests" method="post">            <script src="/Scripts/js.cookie.js"></script>
+<input id="ForSelect" name="ForSelect" type="hidden" value="" />                <input type="hidden" name="page" id="form-rests-page" value="1" />
+                <input type="hidden" name="unique" value="0243df0a-5104-4619-a40c-323208008a78" />
+                <div class="col-md-12"><h2>Фильтрация остатков</h2></div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for='AlcCode' class="control-label col-sm-3 col-fixed">Алк. код</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" id="AlcCode" name="AlcCode" type="text" value="" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for='Name' class="control-label col-sm-3 col-fixed">Наименование</label>
+                        <div class="col-sm-9">
+                            <input class="form-control" id="Name" name="Name" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for='ProducerImporterInn' class="control-label col-sm-6 col-fixed">ИНН Производителя/Импортера</label>
+                        <div class="col-sm-6">
+                            <input class="form-control" id="ProducerImporterInn" name="ProducerImporterInn" type="text" value="" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for='ProducerImporterKpp' class="control-label col-sm-6 col-fixed">КПП Производителя/Импортера</label>
+                        <div class="col-sm-6">
+                            <input class="form-control" id="ProducerImporterKpp" name="ProducerImporterKpp" type="text" value="" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for='ProducerName' class="control-label col-sm-6 col-fixed">Производитель</label>
+                        <div class="col-sm-6">
+                            <input class="form-control" id="ProducerName" name="ProducerName" type="text" value="" />
+                        </div>
+                    </div>
+                </div>
+            <div class="form-group">
+                <div class="col-sm-12" style="margin-top: 10px;">
+                    <button type="submit" class="btn btn-primary btn-min-width">
+                        Поиск
+                        <img src="/Content/Icons/ajax-loader-blue.gif" id="rests-loader" class="collapse" />
+                    </button>
+                    <button type="button" class="btn btn-default" id="rests-filters-reset">Очистить</button>
+                                            <div style="float: right;">
+                            <text>
+                                <a class="btn btn-primary btn-min-width" href="/StockRests">Перейти к остаткам на складе</a>
+<a class="btn btn-primary btn-min-width" href="/Inventory">Перейти к инвентаризации</a>                                <a class="btn btn-primary" href="/Client/Acts?type=Shop">Перейти к актам</a>
+                            </text>
+                        </div>
+                </div>
+            </div>
+                <div class="space-bottom">
+        <div class="toolPanel2">
+            <div class="container">
+                <div id="actions" class="subLinks1 linkBut">
+                    <div class="col-md-12">
+                        <div class="subBlock1">
+                            <strong>Действия с выделенными:</strong>
+                                <a href="#" id="create-act-writeoff-selected">Списать продукцию</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="paginationBlock">
+                    <ul class="pagination" id="rests-pager">
+                            <li class='active'>
+                                <a href="#" data-page="1">1</a>
+                            </li>
+                    </ul>
+                    <img src="/Content/Icons/ajax-loader.gif" id="rests-pager-loader" class="collapse" style="vertical-align: top; padding-top: 30px; padding-left: 10px;" />
+                </div>
+                        
+                </div>
+                <div id='position-modal' class='modal fade' tabindex="-1" role="dialog">
+                    <div class="modal-dialog" id='modalContainer' role="document">
+
+                    </div>
+                </div>
+                <div id='reason-modal' class='modal fade' tabindex="-1" role="dialog">
+                    <div class="modal-dialog" id='reasonContainer' role="document">
+
+                    </div>
+                </div>
+     
+</form> 
+
+<br>
+
+<hr>
 
 
 <div class="col-md-12"><h1>Редактирование позиции акта постановки на баланс</h1></div>
@@ -247,6 +372,9 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
             </div>
         </div>
     </form>
+    
+  <br>
+
     
     <br>
 
