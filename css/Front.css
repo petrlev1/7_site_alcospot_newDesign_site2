@@ -1,4 +1,4 @@
-* {
+﻿* {
     margin: 0;
     padding: 0;
 }
@@ -22,6 +22,26 @@ a {
     a:hover {
         color: #6EC9EF;
         text-decoration: none;
+    }
+
+.table1AlignUp td {
+    vertical-align: top !important;
+}
+.textStyle1 {
+    line-height: 25px;
+    font-size: 16px;
+}
+
+    .textStyle1 ul {
+        margin: 0;
+    }
+
+    .textStyle1 li {
+        list-style: inside;
+        list-style-type: decimal;
+        margin: 15px 0;
+        font-size: 14px;
+        line-height: 20px;
     }
 
 header {
@@ -95,7 +115,7 @@ header {
         display: inline-block;
         position: relative;
         font-size: 1.2em;
-        padding: 10px 15px;
+        padding: 15px 15px;
         border-radius: 5px;
     }
 
@@ -113,8 +133,7 @@ header {
     display: block;
     position: relative;
     font-size: 1em !important;
-    text-align: right;
-    padding: 5px 20px 15px 15px;
+    margin: 27px 0 5px 0;
 }
 
 .nav1ChangeOrg a {
@@ -168,7 +187,6 @@ header {
 }
 
     .nav1SubMenuHover:hover .nav1SubMenu {
-        display: block;
         max-height: 1000px;
         transition: all ease-out 0.5s;
     }
@@ -182,30 +200,33 @@ header {
 .nav1SubMenu {
     display: block;
     position: absolute;
-    left: 0;
-    right: 0;
+    min-width: 300px;
     max-height: 0;
     overflow: hidden;
     padding: 0;
     margin: auto;
     background-color: #ffffff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    z-index: 9999;
 }
 
-    .nav1SubMenu ul {
-        font-size: 1.1em;
-    }
-
-    .nav1SubMenu li {
-        font-size: 0.8em;
-        list-style: none;
+    .nav1SubMenu a {
+        display: block;
+        font-size: 1.2em;
+        padding: 15px;
     }
 
     .nav1SubMenu .container {
         padding: 20px;
     }
 
+    .login-container {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        padding-right: 0;
+        width: 1100px;
+    }
 h1 {
     font-size: 2em;
     color: #0774B5;
@@ -332,60 +353,41 @@ h2 {
 }
 
 .table1 table {
-  font-size: 13px;
-  width: 100%;
-  border-width: 0;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-collapse: collapse;
-  overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2); }
+    font-size: 13px;
+    width: 100%;
+    border-width: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-collapse: collapse;
+    overflow: auto;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+}
+
 .table1 thead {
-  color: #fff;
-  background-color: #0774B5;
-  border-collapse: separate; }
+    color: #fff;
+    background-color: #0774B5;
+    border-collapse: separate;
+}
+
 .table1 tbody tr:hover {
-  background-color: #F2F2F2; }
+    background-color: #F2F2F2;
+}
+
 .table1 th {
-  color: #edf8fd;
-  font-weight: 100;
-  border-bottom: 1px solid #c1dcec !important;
-  vertical-align: middle !important;
-  padding: 10px 15px !important; }
+    color: #edf8fd;
+    font-weight: 100;
+    border-bottom: 1px solid #c1dcec !important;
+    vertical-align: middle !important;
+    padding: 10px 15px !important;
+}
+
 .table1 td {
-  position: relative;
-  border-bottom: 1px #c1dcec solid;
-  padding: 10px 15px !important;
-  vertical-align: middle !important; }
-
-.tablesorter-header-inner:after {
-  content: "\25bd";
-  font-size: 12px;
-  padding: 0 0 0 4px; }
-
-.tableActItem, .tableActItemUp, .tableActItemDown {
-  color: #ffffff !important;
-  font-weight: bold !important; }
-  .tableActItem:after, .tableActItemUp:after, .tableActItemDown:after {
-    font-size: 10px !important;
-    padding: 0 0 0 3px; }
-
-.tableActItemUp:after {
-  content: "\25b2" !important; }
-
-.tableActItemDown:after {
-  content: "\25bc" !important; }
-
-.numArrows {
-  display: inline-block;
-  text-align: center;
-  width: 30px; }
-  .numArrows .form-control {
-    display: inline-block;
-    width: 30px;
-    height: 28px;
-    padding: 3px; }
+    position: relative;
+    border-bottom: 1px #c1dcec solid;
+    padding: 10px 15px !important;
+    /* vertical-align: middle !important;*/
+}
 
 .table1MinTd {
     width: 1px;
@@ -397,50 +399,179 @@ h2 {
 }
 
 .table1But, .table1ButDel, .table1ButList {
-  display: inline-block;
-  font-size: 28px;
-  padding: 8px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  border-radius: 5px;
-  text-align: center;
-  vertical-align: middle; }
-  .table1But:hover, .table1ButDel:hover, .table1ButList:hover {
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); }
+    display: inline-block;
+    font-size: 28px;
+    padding: 8px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+    .table1But:hover, .table1ButDel:hover, .table1ButList:hover {
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
 
 .table1ButDel {
-  width: 35px;
-  height: 35px;
-  background-image: url(Images/NewFront/ButDel.svg); }
+    width: 35px;
+    height: 35px;
+    background-image: url(Images/NewFront/ButDel.svg);
+}
 
 .table1ButList {
-  width: 35px;
-  height: 35px;
-  background-image: url(Images/NewFront/ButList.svg); }
+    width: 35px;
+    height: 35px;
+    background-image: url(Images/NewFront/ButList.svg);
+}
+
+/*.tablesorter-header-inner:after {
+    content: "\25bd";
+    font-size: 12px;
+    padding: 0 0 0 4px;
+}*/
+
+
+.tableActItem, .tableActItemUp, .tableActItemDown {
+    color: #ffffff !important;
+    font-weight: bold !important;
+}
+
+    .tableActItem:after, .tableActItemUp:after, .tableActItemDown:after {
+        font-size: 10px !important;
+        padding: 0 0 0 3px;
+    }
+
+    .tableActItemUp:after {
+        content: "\25b2" !important;
+    }
+
+    .tableActItemDown:after {
+        content: "\25bc" !important;
+    }
 
 .table1ButAccept {
-  color: #5cb85c !important; }
+    color: #5cb85c !important;
+}
 
 .table1ButEdit {
-  color: #d9534f !important; }
+    color: #d9534f !important;
+}
 
 .gtdNumInput {
-  position: relative;
-  width: 40px;
-  height: 35px;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  padding: 6px; }
-  .gtdNumInput:focus {
-    position: absolute;
-    right: 0;
-    width: 300px;
-    transition: width ease-out 0.2s; }
+    position: relative;
+    width: 40px;
+    height: 35px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 6px;
+}
 
-.gtdNumInputWidth { width: 70px; }
+    .gtdNumInput:focus {
+        position: absolute;
+        right: 0;
+        width: 300px;
+        transition: width ease-out 0.2s;
+    }
+
+.gtdNumInputWidth {
+    width: 70px;
+}
+
+.numArrows {
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+}
+
+    .numArrows .form-control {
+        display: inline-block;
+        width: 30px;
+        height: 28px;
+        padding: 3px;
+        text-align: center;
+    }
+
+
+.table2 {
+    display: table;
+    background-color: #fff;
+    cursor: default;
+}
+
+    .table2 ul {
+        display: table-row;
+        border-bottom: 1px #F2F2F2 solid;
+    }
+
+        .table2 ul:hover {
+            background-color: #fafafa;
+        }
+
+    .table2 li {
+        display: table-cell;
+        padding: 8px 15px;
+    }
+
+.table2Head {
+    color: #fff;
+    background-color: #0774B5;
+}
+
+    .table2Head:hover {
+        background-color: #0774B5 !important;
+    }
+
+.DropDownBlock label{
+    display: block;
+    font-weight: 100;
+    cursor: pointer;
+}
+
+.DropDownBlockCheck {
+    display: none;
+}
+
+.DropDownBlockLink {
+    display: inline-block;
+    font-size: 1.2em;
+    color: #0774B5;
+    padding: 5px 10px 2px 0;
+    border-bottom: 1px #75C4EA dashed;
+}
+
+    .DropDownBlockLink:before {
+        content: "+ ";
+        font-size: 21px;
+        font-weight: 100;
+        color: #75C4EA;
+    }
+
+input.DropDownBlockCheck:checked ~ .DropDownBlockCont {
+    max-height: 1000px;
+    position: relative;
+    transition: all ease-out 1s;
+}
+
+input.DropDownBlockCheck:checked + .DropDownBlockLink {
+    font-weight: bold;
+    border-bottom: none;
+}
+
+input.DropDownBlockCheck:checked + .DropDownBlockLink:before {
+    content: "- ";
+}
+
+.DropDownBlockCont {
+    display: block;
+    margin: 20px 0 0 0;
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+}
 
 .status1, .statSuccess, .statError, .statBlue {
     display: block;
@@ -452,8 +583,6 @@ h2 {
     text-align: center;
     padding: 2px;
     border: none;
-    cursor: default;
-    pointer-events: none;
 }
 
 .statSuccess {
@@ -479,6 +608,90 @@ h2 {
     font-size: 1.3em;
 }
 
+.indBlock {
+    background-color: #F7F7F7;
+    margin: 25px 0;
+    font-size: 14px;
+    box-shadow: 0 0 30px rgba(26, 76, 91, 0.4);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+    .indBlock ul {
+        display: block;
+    }
+
+    .indBlock li {
+        display: block;
+        border-bottom: 1px #e7e7e7 solid;
+        padding: 15px 0;
+    }
+
+.indBlockHead {
+    color: #ffffff;
+    font-size: 21px;
+    padding: 20px 35px;
+    background-color: #0774B5;
+    background-image: url(Images/NewFront/indBlockHead.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.indBlockBody {
+    padding: 20px 35px;
+}
+
+.indBlockError {
+    border: 2px #DE351F solid;
+}
+
+    .indBlockError .indBlockHead {
+        background-color: #DE351F;
+    }
+
+.errorColor {
+    color: #DE351F;
+}
+
+.butBlock1 {
+    margin: 8px 0 0 0;
+}
+
+    .butBlock1 button {
+        margin: 5px 0;
+    }
+
+.servicesStat {
+    color: #008C0E;
+}
+
+    .servicesStat span {
+        margin: 0 10px 0 0;
+    }
+
+.indBlocCompany strong {
+    color: #0774B5;
+}
+
+.indBlockChangeOrg {
+    float: right;
+}
+
+.indBlockRight {
+    padding: 0 10px 0 50px;
+}
+
+.indBlock2 div {
+    border-bottom: 1px #e7e7e7 solid;
+    padding: 20px;
+}
+
+    .indBlock2 div a {
+        display: block;
+        font-size: 23px;
+        padding: 8px 0;
+    }
+
 .footer_unauth,
 footer {
     position: relative;
@@ -487,7 +700,7 @@ footer {
     background-color: #0774B5;
     width: 100%;
     margin: 30px 0 0 0;
-    z-index: 9999;
+    z-index: 3;
 }
 
 .footerFix {
@@ -502,7 +715,7 @@ footer {
     padding: 10px 10px 4px 10px;
     background-color: #0774B5;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-    z-index: 9999;
+    z-index: 3;
 }
     .footer_unauth a,
     .footer2 a {
@@ -628,89 +841,139 @@ footer {
     background-color: #065F94;
 }
 
-@media (min-width: 1600px) {
-  .container {
-    width: 1570px; } }
-@media (max-width: 1600px) {
-  .table1 table {
-    font-size: 11px; }
-    .table1 table th {
-      padding: 10px !important; }
-    .table1 table td {
-      padding: 10px !important; }
-
-  .tablesorter-header-inner:after {
-    padding: 0 0 0 2px; } }
-@media (max-width: 1200px) {
-  body {
-    overflow-x: auto; }
-
-  .table1 table {
-    font-size: 10px; }
-    .table1 table th {
-      padding: 5px !important; }
-    .table1 table td {
-      padding: 5px !important; }
-
-  .tablesorter-header-inner:after {
-    content: "";
-    padding: 0; }
-
-  .tableActItem:after, .tableActItemUp:after, .tableActItemDown:after {
-    font-size: 7px !important;
-    padding: 0 0 0 2px; }
-
-  .table1But, .table1ButDel, .table1ButList {
-    font-size: 18px; }
-
-  .gtdNumInput {
-    font-size: 9px;
-    width: 20px;
-    padding: 3px; }
-    
-    .gtdNumInputWidth { width: 30px; }
-
-  .btn-sm {
-    font-size: 8px; } }
 @media (max-width: 992px) {
-  .headProblemBut {
-    margin: 5px 10px; }
+    .headProblemBut {
+        margin: 5px 10px;
+    }
 
-  .headLogin {
-    position: relative;
-    margin: 15px 15px; }
+    .headLogin {
+        position: relative;
+        margin: 15px 15px;
+    }
+    .nav1 a {
+        display: block;
+    }
+    .nav1SubMenuHover {
+        display: block;
+    }
 
-  .toolPanel1 .col-md-8 {
-    border-right: none; }
-  .toolPanel1 .col-md-4 {
-    text-align: left; }
+    .toolPanel1 .col-md-8 {
+        border-right: none;
+    }
 
-  .toolPanel2 .col-md-4 {
-    border-right: none; }
+    .toolPanel1 .col-md-4 {
+        text-align: left;
+    }
 
-  .table1 table {
-    font-size: 8px; }
-    .table1 table th {
-      padding: 4px !important; }
-    .table1 table td {
-      padding: 4px !important; }
+    .toolPanel2 .col-md-4 {
+        border-right: none;
+    }
 
-  .tableArrow {
-    font-size: 6px;
-    padding: 0 0 0 2px; }
+    .table1 table {
+        font-size: 8px;
+    }
 
-  .butCallBack {
-    padding: 6px 12px 6px 40px; }
+        .table1 table th {
+            padding: 4px !important;
+        }
 
-  .footIc {
-    padding: 10px 0 10px 45px; }
+        .table1 table td {
+            padding: 4px !important;
+        }
 
-  .footerBottom {
-    font-size: 11px; }
+    .tableArrow {
+        font-size: 6px;
+        padding: 0 0 0 2px;
+    }
 
-  .table1But, .table1ButDel, .table1ButList {
-    font-size: 12px;
-    padding: 6px; } }
+    .butCallBack {
+        padding: 6px 12px 6px 40px;
+    }
+
+    .footIc {
+        padding: 10px 0 10px 45px;
+    }
+
+    .footerBottom {
+        font-size: 11px;
+    }
+
+    .table1But, .table1ButDel, .table1ButList {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
+
 @media (max-width: 768px) {
-  body {
-    overflow-x: auto; } }
+    body {
+        overflow-x: auto;
+    }
+}
+
+/*# sourceMappingURL=style.css.map */
+
+@media (min-width: 1600px) {
+    .container {
+        width: 1570px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .table1 table {
+        font-size: 11px;
+    }
+
+        .table1 table th {
+            padding: 10px !important;
+        }
+
+        .table1 table td {
+            padding: 10px !important;
+        }
+
+    .tablesorter-header-inner:after {
+        padding: 0 0 0 2px;
+    }
+}
+
+@media (max-width: 1200px) {
+    body {
+        overflow-x: auto;
+    }
+
+    .table1 table {
+        font-size: 10px;
+    }
+
+        .table1 table th {
+            padding: 5px !important;
+        }
+
+        .table1 table td {
+            padding: 5px !important;
+        }
+
+    .tablesorter-header-inner:after {
+        content: "";
+        padding: 0;
+    }
+
+    .tableActItem:after, .tableActItemUp:after, .tableActItemDown:after {
+        font-size: 7px !important;
+        padding: 0 0 0 2px;
+    }
+
+    .table1But, .table1ButDel, .table1ButList {
+        font-size: 18px;
+    }
+
+    .gtdNumInput {
+        font-size: 9px;
+        width: 20px;
+        padding: 3px;
+    }
+
+    .btn-sm {
+        font-size: 8px;
+    }
+}
