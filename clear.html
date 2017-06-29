@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Untitled Document</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/Site.css" rel="stylesheet" type="text/css">
+<link href="css/Front.css" rel="stylesheet" type="text/css">
+
+<script type='text/javascript' src='js/jquery-3.2.1.min.js'></script>
+
+<script type='text/javascript' src='js/jquery.floatThead.min.js'></script>
+
+<script>
+$(document).ready(function () {
+
+        var docHeight = $(window).height();
+        var footerHeight = $('footer').height();
+        var footerTop = $('footer').position().top + footerHeight;
+
+        if (footerTop < docHeight) {
+            $('footer').css('margin-top', 10 + (docHeight - footerTop) + 'px');
+        }
+    });
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="headRowUp">
+<div class="container">
+<div class="col-md-4 colLogo">
+  <div class="logo"><a href="#"><img src="css/Images/NewFront/logo.svg"></a><span class="version">v‌2.7.11</span></div>
+  </div>
+  <div class="col-md-8 headLine"><div class="headTel">8 (499) 653-61-43</div>
+    <div class="headProblemBut"><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span>Сообщить о проблеме</a></div>
+    <div class="headLogin">Вы вошли как: Test User</div></div>
+    </div>
+    </div>
+<div class="col-md-2"></div>
+<div class="container">
+      <div class="nav1">
+        <a href="#">Главная</a>
+        
+        <div class="nav1SubMenuHover">
+        <a href="#" class="nav1SubItem">Склад</a>
+        <div class="nav1SubMenu">
+        <div class="container">
+        <div class="col-md-4"><ul><a href="#">Акт списания продукции</a></ul></div>
+        <div class="col-md-4"><ul><a href="#">Акт постановки на баланс</a></ul></div>
+        <div class="col-md-4"><ul><a href="#">Акт перемещения продукции</a></ul></div>
+        </div>
+        </div>
+        </div>
+ 
+        <div class="nav1SubMenuHover">
+        <a href="#" class="nav1SubItem">Торговый зал</a>
+        <div class="nav1SubMenu">
+        <div class="container">
+          <div class="col-md-3"><ul><a href="#">Торговый зал</a></ul></div>
+         <div class="col-md-7"><ul><a href="#">Инвентаризация</a></ul></div>
+        </div>
+        </div>
+        </div>
+        
+        <div class="nav1SubMenuHover">
+        <a href="#" class="nav1SubItem">Накладные</a>
+        <div class="nav1SubMenu">
+        <div class="container">
+        <div class="col-md-6">
+        <ul>
+          <a href="#">Входящие товаро-транспортные накладные</a>
+        </ul>
+        </div>
+        <div class="col-md-6">
+        <ul>
+          <a href="#">Исходящие товаро-транспортные накладные</a>
+        </ul>
+        </div>
+        </div>
+        </div>
+        </div>
+        
+        <a href="#">Декларации</a>
+        
+        <div class="nav1SubMenuHover">
+        <a href="#" class="nav1SubItem">Отчеты и выгрузка</a>
+        <div class="nav1SubMenu">
+        <div class="container">
+        <div class="col-md-7"></div>
+        <div class="col-md-2"><ul><a href="#">Отчеты</a></ul></div>
+         <div class="col-md-3"><ul><a href="#">Выгрузка данных</a></ul></div>
+        </div>
+        </div>
+        </div>
+        
+        <a href="#">Помощь</a><a href="#">Контакты</a>
+        
+  </div>
+  <div class="nav1ChangeOrg">
+<span class="nav1ChangeOrgLink">ЦентрИКТ (ООО Центр ИКТ КПП 772501001)<span class="glyphicon glyphicon-chevron-down"></span>
+<ul>
+<a href="#">ЦентрИКТ (ООО Центр ИКТ КПП 772501002)</a>
+<a href="#">ЦентрИКТ (ООО Центр ИКТ КПП 772501002)</a>
+<a href="#">ЦентрИКТ (ООО Центр ИКТ КПП 772501002)</a>
+</ul>
+</span><span class="linkBut subLinks1"><a href="#">Выбрать другую организацию</a></span>
+</div>
+</div>
+  
+</header>
+<div class="bodyBack">
+  
+  
+  <div class="container">
+    <div class="col-md-12"><h1>Управление Порталом AlcoSpot ЕГАИС</h1></div>
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-sm-3 col-fixed" for="AccountType">Тип учетной записи</label>
+            <div class="col-sm-9">
+                <p class="form-control-static">
+                    Операторы
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-3 col-fixed" for="OrganisationCount">Всего организаций</label>
+            <div class="col-sm-9">
+                <p class="form-control-static">
+                    746
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-3 col-fixed" for="RetailNetworkCount">Всего торговых сетей</label>
+            <div class="col-sm-9">
+                <p class="form-control-static">
+                    16
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-3 col-fixed" for="RetailNetworkOrgCount">Всего организаций в торговых сетях</label>
+            <div class="col-sm-9">
+                <p class="form-control-static">
+                    121
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-offset-1 space-top">
+        <a href="/Home/ExportStatisticsToExcel" id="export-stats-to-excel" class="btn btn-default blue-Btn">Отчёт активности пользователей и организаций ЕГАИС</a>
+    </div>
+</div>
+
+
+
+    
+  
+  <div class="footer2">
+       <div class="container">
+       <div class="col-sm-6">
+        <div class="footTel footTelPosF2">8 (499) 653-61-43</div><a href="#" class="butCallBack butCallBackPosF2">Обратный звонок</a>
+        </div>
+        <div class="col-sm-6">
+        <a href="#" class="footIcF2 footIcVideo">Видеоинструкция</a>
+        <a href="#" class="footIcF2 footIcHelp">Помощь</a>
+        <a href="#" class="footIcF2 footIcCont">Контакты</a>
+        </div>
+       </div>
+       </div>
+  
+  <footer>
+        
+        <div class="footerTop">
+        <div class="container">
+        
+        <div class="col-md-3">
+        <div><div class="footTel footTelPos">8 (499) 653-61-43</div></div>
+        <a href="#" class="butCallBack butCallBackPos">Обратный звонок</a>
+        </div>
+        
+        <div class="col-md-3">
+        <a href="#" class="footIc footIcVideo">Видеоинструкция</a>
+        <a href="#" class="footIc footIcHelp">Помощь и поддержка</a>
+        <a href="#" class="footIc footIcCont">Контакты</a>
+        </div>
+        
+        <div class="footItems col-md-3">
+        <a href="#">Главная</a>
+        <a href="#">Пользователи</a>
+        <a href="#">Организации</a>
+        <a href="#">Торговые сети</a>
+        <a href="#">Декларации</a>
+        </div>
+        
+        <div class="footItems col-md-3">
+        <a href="#">Склад</a>
+        <a href="#">Торговый зал</a>
+        <a href="#">Накладные</a>
+        <a href="#">Отчёты и выгрузка</a>
+        <a href="#">Управление</a>
+        </div>
+        
+        
+        
+        
+        
+        <br><br>
+
+        </div>
+        </div>
+             
+        <div class="footerBottom">
+        <div class="container">
+        <p>&copy; 2017 - ООО "Центр информационно-коммуникационных технологий" (ООО Центр ИКТ)</p>
+        </div>
+        </div>
+        
+        </footer>
+                
+        </div>
+        
+        
+       <script type="text/javascript">
+		
+	$(".sticky-header").floatThead({scrollingTop:500});
+
+</script>
+           
+
+</body>
+</html>

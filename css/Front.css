@@ -1,4 +1,4 @@
-* {
+﻿* {
     margin: 0;
     padding: 0;
 }
@@ -317,6 +317,8 @@ h2 {
 
 .btn-search-ikt {
     border: 1px solid #2185C5;
+    height: 34px;
+    background-color: white;
 }
 .blue-Btn {
     border: 1px solid #6EC9EF;
@@ -545,13 +547,12 @@ h2 {
     border-bottom: 1px #75C4EA dashed;
 }
 
-  .DropDownBlockLink:before {
-  content: "+ ";
-  position: absolute;
-  margin: -5px 0 0 -22px;
-  font-size: 21px;
-  font-weight: 100;
-  color: #75C4EA; }
+    .DropDownBlockLink:before {
+        content: "+ ";
+        font-size: 21px;
+        font-weight: 100;
+        color: #75C4EA;
+    }
 
 input.DropDownBlockCheck:checked ~ .DropDownBlockCont {
     max-height: 1000px;
@@ -979,6 +980,7 @@ footer {
     .btn-sm {
         font-size: 8px;
     }
-    
-    .descText { width: 100% }
+    .descText {
+        width: 100%
+    }
 }
