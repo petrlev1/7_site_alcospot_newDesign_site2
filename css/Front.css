@@ -846,6 +846,13 @@ footer {
     margin: 0 0 5px 0;
 }
 
+.privAgr {
+  display: block;
+  color: #6EC9EF;
+  margin: 5px 0 6px 0; }
+  .privAgr:hover {
+    color: #ffffff; }
+
 .footerBottom {
     font-size: 14px;
     text-align: center;
