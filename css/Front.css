@@ -430,6 +430,7 @@ h2 {
     background-image: url(Images/NewFront/ButList.svg);
 }
 
+
 /*.tablesorter-header-inner:after {
     content: "\25bd";
     font-size: 12px;
@@ -940,7 +941,7 @@ footer {
 
 @media (max-width: 1600px) {
     .table1 table {
-        font-size: 11px;
+        font-size: 12px;
     }
 
         .table1 table th {
@@ -951,9 +952,6 @@ footer {
             padding: 10px !important;
         }
 
-    .tablesorter-header-inner:after {
-        padding: 0 0 0 2px;
-    }
 }
 
 @media (max-width: 1200px) {
