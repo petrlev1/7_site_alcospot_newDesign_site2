@@ -1,138 +1,189 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Untitled Document</title>
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Организации - ПОРТАЛ АЛКОСПОТ ЕГАИС</title>
+    <link href="http://centrikt.ru:51003/Content/bootstrap.css" rel="stylesheet">
+<link href="http://centrikt.ru:51003/Content/bootstrap-datetimepicker.css" rel="stylesheet">
 
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="css/Site.css" rel="stylesheet" type="text/css">
-<link href="css/Front.css" rel="stylesheet" type="text/css">
+    <link href="css/Site.css?24" rel="stylesheet">
 
-<script type='text/javascript' src='js/jquery-3.2.1.min.js'></script>
+    <link href="http://centrikt.ru:51003/Content/footer.css?24" rel="stylesheet">
 
-<script type='text/javascript' src='js/jquery.floatThead.min.js'></script>
+    <link href="css/Front.css?24" rel="stylesheet">
 
-<script>
-$(document).ready(function () {
+    <link href="https://doc.alcospot.ru:8090/Content/callback-request.css" rel="stylesheet">
+    <script src="http://centrikt.ru:51003/Scripts/modernizr-2.8.3.js"></script>
 
-        var docHeight = $(window).height();
-        var footerHeight = $('footer').height();
-        var footerTop = $('footer').position().top + footerHeight;
+    <script src="http://centrikt.ru:51003/Scripts/jquery-2.1.4.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/jquery.validate.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/required-if-attribute.js"></script>
 
-        if (footerTop < docHeight) {
-            $('footer').css('margin-top', 10 + (docHeight - footerTop) + 'px');
+    <script src="http://centrikt.ru:51003/Scripts/bootstrap.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/respond.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/bootbox.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/moment.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/moment-with-locales.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/jquery.tablesorter.min.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/bootstrap-datetimepicker.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/jquery.inputmask/inputmask.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/jquery.inputmask/jquery.inputmask.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/jquery.inputmask/inputmask.extensions.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/jquery.inputmask/inputmask.date.extensions.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/jquery.inputmask/inputmask.numeric.extensions.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/jquery.inputmask/inputmask.regex.extensions.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/Controls/editor-date.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/floatThead/jquery.floatThead.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/common.js"></script>
+<script src="http://centrikt.ru:51003/Scripts/jquery.scrollUp.min.js"></script>
+
+
+    
+    <script>
+
+        $(document).ready(function () {
+            $('#org-table').tablesorter({
+                headers: {
+                    4: { sorter: "IktDateFormat" }
+                }
+            });
+
+            $('#org-table').floatThead();
+        });
+
+        $(function () {
+            $('#checkbox-select-all').click(function (event) {
+                var checked = $(this).prop('checked');
+                $('input[id^="check-"]', $('#table-body')).each(function (index, element) {
+                    $(element).prop('checked', checked);
+                });
+            });
+
+            $('#block-selected').click(function (event) {
+                event.preventDefault();
+                BlockSelected(true);
+            });
+
+            $('#unblock-selected').click(function (event) {
+                event.preventDefault();
+                BlockSelected(false);
+            });
+
+        });
+
+        function BlockSelected(block) {
+            var list = $('input[id^="check-"]:checked', $('#table-body'));
+            if (list.length == 0) {
+                DialogInfo('Выберите хотя бы одну организацию');
+                return;
+            }
+
+            var ids = [];
+            list.each(function (index, element) {
+                ids.push($(element).data('id'));
+            });
+
+            $('#input-ids', $('#form-block')).val(ids.join(','));
+            $('#input-block', $('#form-block')).val(block);
+            $('#form-block')[0].submit();
         }
-    });
-function MM_jumpMenu(targ,selObj,restore){ //v3.0
-  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
-  if (restore) selObj.selectedIndex=0;
-}
-</script>
+    </script>
 
+    <script src="https://doc.alcospot.ru:8090/Scripts/callback-request.js"></script>
 </head>
-
 <body>
+    <header>
+        <div class="headRowUp">
+            <div class="container">
+                <div class="col-md-4 colLogo">
+                    <div class="logo">
+                        <a href="http://centrikt.ru:51003/"><img src="http://centrikt.ru:51003/Content/Images/NewFront/logo.svg"><span class="version">v‌3.5.6403</span></a>
+                    </div>
+                </div>
+                <div class="col-md-8 headLine">
+                    <div class="headTel">8 (499) 653-61-43</div>
+                    <div class="headProblemBut">
+                        <a href="#" class="callBackControl"><span class="glyphicon glyphicon-exclamation-sign"></span>Сообщить о проблеме</a>
+                    </div>
+                        <div class="headLogin">Вы вошли как: Designer | <a href="http://centrikt.ru:51003/Account/Logout">Выйти</a></div>
+                </div>
+            </div>
+        </div>
 
-<header>
 
-<div class="headRowUp">
+
 <div class="container">
-<div class="col-md-4 colLogo">
-  <div class="logo"><a href="#"><img src="css/Images/NewFront/logo.svg"></a><span class="version">v‌2.7.11</span></div>
-  </div>
-  <div class="col-md-8 headLine"><div class="headTel">8 (499) 653-61-43</div>
-    <div class="headProblemBut"><a href="#"><span class="glyphicon glyphicon-exclamation-sign"></span>Сообщить о проблеме</a></div>
-    <div class="headLogin">Вы вошли как: Test User</div></div>
+    <div class="col-md-9">
+        <div class="nav1" id="mainmenu">
+
+
+<a href="http://centrikt.ru:51003/Home/Operator">Главная</a>
+
+
+<a href="http://centrikt.ru:51003/User">Пользователи</a><a href="http://centrikt.ru:51003/Organisation">Организации</a><a href="http://centrikt.ru:51003/RetailNetwork">Торговые сети</a>
+
+        </div>
     </div>
-    </div>
-<div class="col-md-2"></div>
+
+
+                         </div>
+<script>
+    var menu = $('#mainmenu');
+    var activeItemName = 'operator-orgs';
+    if (activeItemName != '') {
+        var activeItem = $('#' + activeItemName, menu);
+        activeItem.addClass('active');
+    }
+</script>
+    </header>
+    <div class="bodyBack">
+
+
+        
+
+
 <div class="container">
-      <div class="nav1">
-        <a href="#">Главная</a>
-        
-        <div class="nav1SubMenuHover">
-        <a href="#" class="nav1SubItem">Склад</a>
-        <div class="nav1SubMenu">
+    <div class="col-md-10"><h1>Организации, присутствующие в системе AlcoSpot ЕГАИС</h1></div>
+
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-sm-6">
+                <a class="btn btn-primary" href="http://centrikt.ru:51003/Organisation/Edit">Добавить новую организацию</a>
+            </div>
+            <div class="space-bottom col-sm-offset-6" style="margin-right: 15px;">
+<form action="http://centrikt.ru:51003/Organisation" method="get">                    <div class="input-group" style="float:right">
+                        <input class="form-control search" id="Search" name="Search" placeholder="ИНН, КПП или название организации" type="text" value="">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-default btn-search-ikt">Найти</button>
+                        </span>
+                    </div>
+</form>            </div>
+        </div>
+    </div>
+
+
+    <div class="toolPanel2">
         <div class="container">
-        <div class="col-md-4"><ul><a href="#">Акт списания продукции</a></ul></div>
-        <div class="col-md-4"><ul><a href="#">Акт постановки на баланс</a></ul></div>
-        <div class="col-md-4"><ul><a href="#">Акт перемещения продукции</a></ul></div>
+            <div id="actions" class="subLinks1 linkBut">
+                <div class="col-md-6">
+                    <div class="subBlock1"><strong>Действия с выделенными:</strong><a href="#" id="block-selected">Заблокировать</a><a href="#" id="unblock-selected">Разблокировать</a></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        </div>
-        </div>
- 
-        <div class="nav1SubMenuHover">
-        <a href="#" class="nav1SubItem">Торговый зал</a>
-        <div class="nav1SubMenu">
-        <div class="container">
-          <div class="col-md-3"><ul><a href="#">Торговый зал</a></ul></div>
-         <div class="col-md-7"><ul><a href="#">Инвентаризация</a></ul></div>
-        </div>
-        </div>
-        </div>
-        
-        <div class="nav1SubMenuHover">
-        <a href="#" class="nav1SubItem">Накладные</a>
-        <div class="nav1SubMenu">
-        <div class="container">
-        <div class="col-md-6">
-        <ul>
-          <a href="#">Входящие товаро-транспортные накладные</a>
-        </ul>
-        </div>
-        <div class="col-md-6">
-        <ul>
-          <a href="#">Исходящие товаро-транспортные накладные</a>
-        </ul>
-        </div>
-        </div>
-        </div>
-        </div>
-        
-        <a href="#">Декларации</a>
-        
-        <div class="nav1SubMenuHover">
-        <a href="#" class="nav1SubItem">Отчеты и выгрузка</a>
-        <div class="nav1SubMenu">
-        <div class="container">
-        <div class="col-md-7"></div>
-        <div class="col-md-2"><ul><a href="#">Отчеты</a></ul></div>
-         <div class="col-md-3"><ul><a href="#">Выгрузка данных</a></ul></div>
-        </div>
-        </div>
-        </div>
-        
-        <a href="#">Помощь</a><a href="#">Контакты</a>
-        
-  </div>
-  <div class="nav1ChangeOrg">
-<span class="nav1ChangeOrgLink">ЦентрИКТ (ООО Центр ИКТ КПП 772501001)<span class="glyphicon glyphicon-chevron-down"></span>
-<ul>
-<a href="#">ЦентрИКТ (ООО Центр ИКТ КПП 772501002)</a>
-<a href="#">ЦентрИКТ (ООО Центр ИКТ КПП 772501002)</a>
-<a href="#">ЦентрИКТ (ООО Центр ИКТ КПП 772501002)</a>
-</ul>
-</span><span class="linkBut subLinks1"><a href="#">Выбрать другую организацию</a></span>
-</div>
-</div>
-  
-</header>
-<div class="bodyBack">
-  
-    
+    </div>
+
     <div class="container">
-    
-    <br>
-
- <div class="table1">
-            <div aria-hidden="true" class="floatThead-container" style="overflow: hidden; position: fixed; margin-top: 0px; top: 0px; z-index: 1001; will-change: transform; transform: translateX(142px) translateY(149px); left: 0px; width: 1140px;"><table class="table table-striped sticky-header tablesorter tablesorter-default floatThead-table" style="border-collapse: collapse; border: 0px none rgb(128, 128, 128); display: table; width: 1140px; margin: 0px; table-layout: fixed;"><colgroup><col style="width: 40px;"><col style="width: 350px;"><col style="width: 120px;"><col style="width: 150px;"><col style="width: 150px;"><col style="width: 150px;"><col style="width: 180px;"></colgroup><thead>
+        <br>
+        <div class="table1">
+            <div aria-hidden="true" class="floatThead-container" style="overflow: hidden; position: fixed; margin-top: 0px; top: 0px; z-index: 1001; will-change: transform; transform: translateX(142px) translateY(349px); left: 0px; width: 1140px;"><table class="table table-striped sticky-header tablesorter tablesorter-default floatThead-table" style="border-collapse: collapse; border: 0px none rgb(128, 128, 128); display: table; width: 1140px; margin: 0px; table-layout: fixed;"><colgroup><col style="width: 40px;"><col style="width: 350px;"><col style="width: 120px;"><col style="width: 150px;"><col style="width: 150px;"><col style="width: 150px;"><col style="width: 180px;"></colgroup><thead>
                 <tr class="tablesorter-headerRow">
                     <th data-sorter="false" width="30px" class="select-all table1MinTd tablesorter-header sorter-false" data-column="0"><div class="tablesorter-header-inner">
                         <input type="checkbox" id="checkbox-select-all" class="table1Check">
                     </div></th>
-                    <th width="350px" data-column="1" class="tablesorter-header tablesorter-headerDesc"><div class="tablesorter-header-inner">Название организации</div></th>
+                    <th width="350px" data-column="1" class="tablesorter-header"><div class="tablesorter-header-inner">Название организации</div></th>
                     <th width="120px" data-column="2" class="tablesorter-header"><div class="tablesorter-header-inner">ИНН</div></th>
                     <th width="150px" data-column="3" class="tablesorter-header"><div class="tablesorter-header-inner">Подразделений</div></th>
                     <th width="150px" data-column="4" class="tablesorter-header"><div class="tablesorter-header-inner">Дата регистрации</div></th>
@@ -141,17 +192,452 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                 </tr>
                 </thead></table></div><table id="org-table" class="table table-striped sticky-header tablesorter tablesorter-default" style="table-layout: fixed; min-width: 1140px;"><colgroup><col style="width: 40px;"><col style="width: 350px;"><col style="width: 120px;"><col style="width: 150px;"><col style="width: 150px;"><col style="width: 150px;"><col style="width: 180px;"></colgroup>
                 
-                <thead><tr class="size-row" aria-hidden="true" style="height: 44px;"><th class="floatThead-col" aria-label="
+                <thead><tr class="size-row" aria-hidden="true" style="height: 62px;"><th class="floatThead-col" aria-label="
                         
-                    " style="height: 44px;"></th><th class="floatThead-col" aria-label="Название организации" style="height: 44px;"></th><th class="floatThead-col" aria-label="ИНН" style="height: 44px;"></th><th class="floatThead-col" aria-label="Подразделений" style="height: 44px;"></th><th class="floatThead-col" aria-label="Дата регистрации" style="height: 44px;"></th><th class="floatThead-col" aria-label="Заблокирована?" style="height: 44px;"></th><th class="floatThead-col" aria-label="" style="height: 44px;"></th></tr></thead><tbody id="table-body">
-                      
-                    
-                <tr>
+                    " style="height: 62px;"></th><th class="floatThead-col" aria-label="Название организации" style="height: 62px;"></th><th class="floatThead-col" aria-label="ИНН" style="height: 62px;"></th><th class="floatThead-col" aria-label="Подразделений" style="height: 62px;"></th><th class="floatThead-col" aria-label="Дата регистрации" style="height: 62px;"></th><th class="floatThead-col" aria-label="Заблокирована?" style="height: 62px;"></th><th class="floatThead-col" aria-label="" style="height: 62px;"></th></tr></thead><tbody id="table-body">
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-7725008472" data-id="7725008472">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/7725008472">Общество с ограниченной ответственностью "Новинки-2"</a>
+                        </td>
+                        <td>
+                            7725008472
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>03.12.2015</td>
+                        <td class="text-center">Да</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=7725008472" id="link-switch-7725008472" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-4825061227" data-id="4825061227">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/4825061227">Центр ИКТ</a>
+                        </td>
+                        <td>
+                            4825061227
+                        </td>
+                        <td class="text-center">
+                            6
+                        </td>
+                        <td>03.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=4825061227" id="link-switch-4825061227" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-7718502458" data-id="7718502458">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/7718502458"> ООО "ТД "Мегаполис"</a>
+                        </td>
+                        <td>
+                            7718502458
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>03.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=7718502458" id="link-switch-7718502458" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-5029155260" data-id="5029155260">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/5029155260">ООО «АШАН ФЛАЙ»</a>
+                        </td>
+                        <td>
+                            5029155260
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>03.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=5029155260" id="link-switch-5029155260" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-5027076599" data-id="5027076599">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/5027076599">Общество с ограниченной ответственностью "ВИНТОRГ"</a>
+                        </td>
+                        <td>
+                            5027076599
+                        </td>
+                        <td class="text-center">
+                            9
+                        </td>
+                        <td>03.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=5027076599" id="link-switch-5027076599" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-7710439589" data-id="7710439589">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/7710439589">ООО "Паритет"</a>
+                        </td>
+                        <td>
+                            7710439589
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>03.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=7710439589" id="link-switch-7710439589" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-7729684746" data-id="7729684746">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/7729684746">ООО "Серебряный берег"</a>
+                        </td>
+                        <td>
+                            7729684746
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>03.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=7729684746" id="link-switch-7729684746" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-5008022781" data-id="5008022781">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/5008022781">ООО "Пирамида"</a>
+                        </td>
+                        <td>
+                            5008022781
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>03.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=5008022781" id="link-switch-5008022781" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-7730094445" data-id="7730094445">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/7730094445">ООО Виджил-Инвест</a>
+                        </td>
+                        <td>
+                            7730094445
+                        </td>
+                        <td class="text-center">
+                            2
+                        </td>
+                        <td>03.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=7730094445" id="link-switch-7730094445" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-5032150223" data-id="5032150223">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/5032150223">503201001</a>
+                        </td>
+                        <td>
+                            5032150223
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>03.12.2015</td>
+                        <td class="text-center">Да</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=5032150223" id="link-switch-5032150223" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-5050081149" data-id="5050081149">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/5050081149">ООО СеПа</a>
+                        </td>
+                        <td>
+                            5050081149
+                        </td>
+                        <td class="text-center">
+                            3
+                        </td>
+                        <td>03.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=5050081149" id="link-switch-5050081149" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-5030053672" data-id="5030053672">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/5030053672">ООО Дубль-В</a>
+                        </td>
+                        <td>
+                            5030053672
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>03.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=5030053672" id="link-switch-5030053672" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-7700000009" data-id="7700000009">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/7700000009">ООО Рога и Копыта-8</a>
+                        </td>
+                        <td>
+                            7700000009
+                        </td>
+                        <td class="text-center">
+                            4
+                        </td>
+                        <td>03.12.2015</td>
+                        <td class="text-center">Да</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=7700000009" id="link-switch-7700000009" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-5006010967" data-id="5006010967">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/5006010967">Шарэль</a>
+                        </td>
+                        <td>
+                            5006010967
+                        </td>
+                        <td class="text-center">
+                            0
+                        </td>
+                        <td>03.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=5006010967" id="link-switch-5006010967" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-7700000001" data-id="7700000001">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/7700000001">ООО Рога и Копыта-8</a>
+                        </td>
+                        <td>
+                            7700000001
+                        </td>
+                        <td class="text-center">
+                            2
+                        </td>
+                        <td>03.12.2015</td>
+                        <td class="text-center">Да</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=7700000001" id="link-switch-7700000001" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-5046066236" data-id="5046066236">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/5046066236">ООО "Кнакер - Продукт Т"</a>
+                        </td>
+                        <td>
+                            5046066236
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>07.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=5046066236" id="link-switch-5046066236" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-7722696703" data-id="7722696703">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/7722696703">ООО "Потенциал"</a>
+                        </td>
+                        <td>
+                            7722696703
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>08.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=7722696703" id="link-switch-7722696703" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-7709860986" data-id="7709860986">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/7709860986">Общество с ограниченной ответственностью "Пчелка+"</a>
+                        </td>
+                        <td>
+                            7709860986
+                        </td>
+                        <td class="text-center">
+                            2
+                        </td>
+                        <td>09.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=7709860986" id="link-switch-7709860986" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-5040115790" data-id="5040115790">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/5040115790">ООО "Ярус"</a>
+                        </td>
+                        <td>
+                            5040115790
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>10.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=5040115790" id="link-switch-5040115790" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-5003043280" data-id="5003043280">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/5003043280">Общество с ограниченной ответственностью Ника Плюс</a>
+                        </td>
+                        <td>
+                            5003043280
+                        </td>
+                        <td class="text-center">
+                            2
+                        </td>
+                        <td>14.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=5003043280" id="link-switch-5003043280" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-5032034435" data-id="5032034435">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/5032034435">ООО "Мастер ВАГ"</a>
+                        </td>
+                        <td>
+                            5032034435
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>14.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=5032034435" id="link-switch-5032034435" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-646456456456" data-id="646456456456">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/646456456456">Каблук</a>
+                        </td>
+                        <td>
+                            646456456456
+                        </td>
+                        <td class="text-center">
+                            2
+                        </td>
+                        <td>17.12.2015</td>
+                        <td class="text-center">Да</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=646456456456" id="link-switch-646456456456" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-2320092269" data-id="2320092269">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/2320092269">ООО ЮГ-НОВЫЙ ВЕК</a>
+                        </td>
+                        <td>
+                            2320092269
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>21.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=2320092269" id="link-switch-2320092269" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
                         <td class="select-this">
                             <input type="checkbox" id="check-1234567890" data-id="1234567890">
                         </td>
                         <td>
-                            <a href="/Organisation/Edit/1234567890">Центр ИКТ (тестовая организация)</a>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/1234567890">Центр ИКТ (тестовая организация)</a>
                         </td>
                         <td>
                             1234567890
@@ -162,82 +648,267 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
                         <td>22.12.2015</td>
                         <td class="text-center">Да</td>
                         <td>
-                            <a href="#" data-href="/Organisation/SwitchToOrganisation?inn=1234567890" id="link-switch-1234567890" class="post-link">Выбрать организацию</a>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=1234567890" id="link-switch-1234567890" class="post-link">Выбрать организацию</a>
                         </td>
-                    </tr></tbody>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-7710881155" data-id="7710881155">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/7710881155">ООО "АВЕСТА"</a>
+                        </td>
+                        <td>
+                            7710881155
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>22.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=7710881155" id="link-switch-7710881155" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-9909276570" data-id="9909276570">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/9909276570">Филиал Учреждения "Гостиничный комплекс Исполнительного аппарата Президента Республики Таджикистан"</a>
+                        </td>
+                        <td>
+                            9909276570
+                        </td>
+                        <td class="text-center">
+                            2
+                        </td>
+                        <td>22.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=9909276570" id="link-switch-9909276570" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-7731042827" data-id="7731042827">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/7731042827">ООО "Мандарин ИФ"</a>
+                        </td>
+                        <td>
+                            7731042827
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>22.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=7731042827" id="link-switch-7731042827" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-1212121212" data-id="1212121212">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/1212121212">Быстрая организация</a>
+                        </td>
+                        <td>
+                            1212121212
+                        </td>
+                        <td class="text-center">
+                            2
+                        </td>
+                        <td>22.12.2015</td>
+                        <td class="text-center">Да</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=1212121212" id="link-switch-1212121212" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-7728802563" data-id="7728802563">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/7728802563">ООО "МЕРИДИАН"</a>
+                        </td>
+                        <td>
+                            7728802563
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>22.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=7728802563" id="link-switch-7728802563" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-1018005210" data-id="1018005210">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/1018005210">ООО "Лоухская торгово-сервисная фирма"</a>
+                        </td>
+                        <td>
+                            1018005210
+                        </td>
+                        <td class="text-center">
+                            2
+                        </td>
+                        <td>22.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=1018005210" id="link-switch-1018005210" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-5053000211" data-id="5053000211">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/5053000211">ЗАО "Отдых"</a>
+                        </td>
+                        <td>
+                            5053000211
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>22.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=5053000211" id="link-switch-5053000211" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-7715969614" data-id="7715969614">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/7715969614">ООО "Гермес"</a>
+                        </td>
+                        <td>
+                            7715969614
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>22.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=7715969614" id="link-switch-7715969614" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-7726301890" data-id="7726301890">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/7726301890">ООО Фирма "РЭКК"</a>
+                        </td>
+                        <td>
+                            7726301890
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td>22.12.2015</td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=7726301890" id="link-switch-7726301890" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                  
+                    <tr>
+                        <td class="select-this">
+                            <input type="checkbox" id="check-1243546576" data-id="1243546576">
+                        </td>
+                        <td>
+                            <a href="http://centrikt.ru:51003/Organisation/Edit/1243546576">TestOrg6</a>
+                        </td>
+                        <td>
+                            1243546576
+                        </td>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td></td>
+                        <td class="text-center">Нет</td>
+                        <td>
+                            <a href="#" data-href="http://centrikt.ru:51003/Organisation/SwitchToOrganisation?inn=1243546576" id="link-switch-1243546576" class="post-link">Выбрать организацию</a>
+                        </td>
+                    </tr>
+                </tbody>
             <fthfoot style="display: table-footer-group; border-spacing: 0px; height: 0px; border-collapse: collapse; visibility: hidden;"><fthtr style="display: table-row; border-spacing: 0px; height: 0px; border-collapse: collapse;"><fthtd style="display: table-cell; height: 0px; width: auto;"></fthtd><fthtd style="display: table-cell; height: 0px; width: auto;"></fthtd><fthtd style="display: table-cell; height: 0px; width: auto;"></fthtd><fthtd style="display: table-cell; height: 0px; width: auto;"></fthtd><fthtd style="display: table-cell; height: 0px; width: auto;"></fthtd><fthtd style="display: table-cell; height: 0px; width: auto;"></fthtd><fthtd style="display: table-cell; height: 0px; width: auto;"></fthtd></fthtr></fthfoot></table>
         </div>
-    
-  </div>
-  
-  <div class="footer2">
-    <div class="container">
-      <div class="col-sm-6">
-        <div class="footTel footTelPosF2">8 (499) 653-61-43</div><a href="#" class="butCallBack butCallBackPosF2">Обратный звонок</a>
-      </div>
-       </div>
-       </div>
-  
-  <footer>
-        
-        <div class="footerTop">
-        <div class="container">
-        
-        <div class="col-md-3">
-        <div><div class="footTel footTelPos">8 (499) 653-61-43</div>
-          <div class="col-sm-6"> <a href="#" class="footIcF2 footIcVideo">Видеоинструкция</a> <a href="#" class="footIcF2 footIcHelp">Помощь</a> <a href="#" class="footIcF2 footIcCont">Контакты</a> </div>
-        </div>
-        <a href="#" class="butCallBack butCallBackPos">Обратный звонок</a>
-        </div>
-        
-        <div class="col-md-3">
-        <a href="#" class="footIc footIcVideo">Видеоинструкция</a>
-        <a href="#" class="footIc footIcHelp">Помощь и поддержка</a>
-        <a href="#" class="footIc footIcCont">Контакты</a>
-        </div>
-        
-        <div class="footItems col-md-3">
-        <a href="#">Главная</a>
-        <a href="#">Пользователи</a>
-        <a href="#">Организации</a>
-        <a href="#">Торговые сети</a>
-        <a href="#">Декларации</a>
-        </div>
-        
-        <div class="footItems col-md-3">
-        <a href="#">Склад</a>
-        <a href="#">Торговый зал</a>
-        <a href="#">Накладные</a>
-        <a href="#">Отчёты и выгрузка</a>
-        <a href="#">Управление</a>
-        </div>
-        
-        
-        
-        
-        
-        <br><br>
 
-        </div>
-        </div>
-             
-        <div class="footerBottom">
-        <div class="container">
-        <p>&copy; 2017 - ООО "Центр информационно-коммуникационных технологий" (ООО Центр ИКТ)</p>
-        </div>
-        </div>
-        
+<form action="http://centrikt.ru:51003/Organisation/Block" class="collapse" id="form-block" method="post">            <input type="hidden" name="ids" id="input-ids">
+            <input type="hidden" name="block" id="input-block">
+</form>    </div>
+
+
+
+
+                <footer>
+            <div class="footerTop">
+                <div class="container">
+                    <div class="col-md-3">
+                        <div><div class="footTel footTelPos">8 (499) 653-61-43</div></div>
+                        <a href="#" class="butCallBack butCallBackPos callBackControl">Сообщить о проблеме</a>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="footIc footIcVideo" href="http://centrikt.ru:51003/Help/HowToUse">Видеоинструкция</a>
+                        <a class="footIc footIcHelp" href="http://centrikt.ru:51003/Help/Support">Помощь и поддержка</a>
+                        <a class="footIc footIcCont" href="http://centrikt.ru:51003/Help/Contacts">Контакты</a>
+                    </div>
+
+                        <div class="footItems col-md-3">
+                            <a href="http://centrikt.ru:51003/Home/Operator">Главная</a>
+                            <a href="http://centrikt.ru:51003/User">Пользователи</a>
+                            <a href="http://centrikt.ru:51003/Organisation">Организации</a>
+                            <a href="http://centrikt.ru:51003/RetailNetwork">Торговые сети</a>
+                        </div>
+                    <br><br>
+
+                </div>
+            </div>
+
+            <div class="footerBottom">
+                <div class="container-fluid">
+                    <a href="https://centrikt.ru/Agreement" target="_blank" class="privAgr">Соглашение о конфиденциальности</a> | <a href="#" target="_blank" class="privAgr">Перейти на старую версию портала</a>
+                    <p>© 2017 - ООО "Центр информационно-коммуникационных технологий" (ООО Центр ИКТ)</p>
+                </div>
+            </div>
         </footer>
-                
-        </div>
-        
-        
-       <script type="text/javascript">
-		
-	$(".sticky-header").floatThead({scrollingTop:500});
+
+
+<script>
+    $(function () {
+        $.scrollUp();
+    });
+
+    $(function () {
+        var t = new CallbackRequestTopButton($('.callBackControl'), 'egais.alcospot.ru', 'https://doc.alcospot.ru:8090');
+    });
+
+    $(document).ready(function () {
+
+        var docHeight = $(window).height();
+        var footerHeight = $('footer').height();
+        var footerTop = $('footer').position().top + footerHeight;
+
+        if (footerTop < docHeight) {
+            $('footer').css('margin-top', 10 + (docHeight - footerTop) + 'px');
+        }
+    });
 
 </script>
-           
 
-</body>
-</html>
+
+    </div>
+
+<a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: none;"></a></body></html>
