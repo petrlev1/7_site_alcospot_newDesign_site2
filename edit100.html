@@ -44,6 +44,15 @@
 
     
     <script src="https://doc.alcospot.ru:8090/Scripts/callback-request.js"></script>
+    
+    <script>
+     $(function(){
+    var expUserItem3var = $(".expUserItem3Block");
+       $(":checkbox", expUserItem3var).change(function() {
+                  expUserItem3var.toggleClass("expUserItem3Block2", this.checked);
+      });});
+  </script>
+    
 </head>
 <body>
     <header>
@@ -156,9 +165,15 @@
     <div class="col-md-8"><h1>Cклад (регистр №1)</h1></div>
 
         <div class="col-md-4" style="text-align: right">
-            <div class="expUserItem">
-                <a href="http://centrikt.ru:51003/Client/SwitchMode?returnUrl=%2FStockRests"><span class="glyphicon glyphicon-wrench"></span>Режим опытного пользователя</a>
-            </div>
+            
+            <div class="expUserItem3">
+    <label>
+    <div class="expUserItem3Block"><input name="" type="checkbox" value="" class="expUserItem3Check"><div class="expUserItemBlock3Circ"></div><span class="expUserItemIcon1"></span><span class="expUserItem3Icon1 glyphicon glyphicon-wrench"></span>
+    <span class="expUserItem3text1">Обычный режим</span><span class="expUserItem3text2">Опытный пользователь</span>
+    </div>
+    </label>
+    </div>
+            
         </div>
     <div class="col-md-12 descText">
         Заполнение позиций документов, отправляемых в ЕГАИС, осуществляется на основании имеющихся на виртуальном складе вашей организации остатков. Также в целях продажи алкогольной продукции ее требуется перевести в торговый зал. Остатки всегда актуальны на конкретную дату.
