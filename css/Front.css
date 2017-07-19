@@ -1,4 +1,4 @@
-* {
+﻿* {
     margin: 0;
     padding: 0;
 }
@@ -430,7 +430,6 @@ h2 {
     background-image: url(Images/NewFront/ButList.svg);
 }
 
-
 /*.tablesorter-header-inner:after {
     content: "\25bd";
     font-size: 12px;
@@ -614,27 +613,33 @@ input.DropDownBlockCheck:checked + .DropDownBlockLink:before {
 }
 
 .indBlock, .indBlock2 {
-  background-color: #F7F7F7;
-  margin: 25px 0;
-  font-size: 14px;
-  box-shadow: 0 0 30px rgba(26, 76, 91, 0.4);
-  border-radius: 20px;
-  overflow: hidden; }
-  .indBlock ul, .indBlock2 ul {
-    display: block; }
-  .indBlock li, .indBlock2 li {
-    display: block;
-    border-bottom: 1px #e7e7e7 solid;
-    padding: 15px 0; }
+    background-color: #F7F7F7;
+    margin: 25px 0;
+    font-size: 14px;
+    box-shadow: 0 0 30px rgba(26, 76, 91, 0.4);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+    .indBlock ul, .indBlock2 ul {
+        display: block;
+    }
+
+    .indBlock li, .indBlock2 li {
+        display: block;
+        border-bottom: 1px #e7e7e7 solid;
+        padding: 15px 0;
+    }
 
 .indBlockHead, .indBlock2Head {
-  color: #ffffff;
-  font-size: 21px;
-  padding: 20px 35px;
-  background-color: #0774B5;
-  background-image: url(Images/NewFront/indBlockHead.png);
-  background-repeat: no-repeat;
-  background-position: right; }
+    color: #ffffff;
+    font-size: 21px;
+    padding: 20px 35px;
+    background-color: #0774B5;
+    background-image: url(Images/NewFront/indBlockHead.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
 
 .indBlockBody {
     padding: 20px 35px;
@@ -644,13 +649,60 @@ input.DropDownBlockCheck:checked + .DropDownBlockLink:before {
     border: 2px #DE351F solid;
 }
 
+
+.indBlockWarning {
+    border: 2px #f2e085 solid;
+}
     .indBlockError .indBlockHead, .indBlockError .indBlock2Head {
-    background-color: #DE351F; }
+        background-color: #DE351F;
+    }
+
+.indBlockWarning .indBlockHead, .indBlockWarning .indBlock2Head {
+    background-color: #f2e085;
+}
 
 .errorColor {
     color: #DE351F;
 }
 
+.successColor {
+    color: #3c763d;
+}
+
+.warningColor {
+    color: #8a6d3b;
+}
+.indBlock2 {
+    font-size: 12px;
+}
+
+     .indBlock2 ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .indBlock2 li {
+        font-size: 12px;
+        padding: 8px 0;
+    }
+
+ .indBlock2 {
+     font-size: 12px;
+}
+
+.indBlock2 ul {
+   margin: 0;
+   padding: 0;
+}
+
+.indBlock2 li {
+    padding: 8px 0;
+}
+
+.indBlock2Head {
+     font-size: 18px;
+     padding: 10px 25px !important;
+}
 .butBlock1 {
     margin: 8px 0 0 0;
 }
@@ -680,31 +732,16 @@ input.DropDownBlockCheck:checked + .DropDownBlockLink:before {
 }
 
 .indBlock2 div {
-  border-bottom: 1px #e7e7e7 solid;
-  padding: 20px; }
-  .indBlock2 div a {
+    border-bottom: 1px #e7e7e7 solid;
+    padding: 20px;
+}
+.indBlock2 div a {
     display: block;
     font-size: 23px;
-    padding: 8px 0; }
+    padding: 8px 0;
 
-.indBlock2 { font-size: 12px; }
-  .indBlock2 ul {
-    margin: 0;
-    padding: 0; }
-  .indBlock2 li { font-size: 12px;
-    padding: 8px 0; }
+}
 
-.indBlock2 {
-  font-size: 12px; }
-  .indBlock2 ul {
-    margin: 0;
-    padding: 0; }
-  .indBlock2 li {
-    padding: 8px 0; }
-
-.indBlock2Head {
-  font-size: 18px;
-  padding: 10px 25px !important; }
 
 .footer_unauth,
 footer {
@@ -787,6 +824,16 @@ footer {
         background-image: url(Images/NewFront/footIcPlayAct.svg);
     }
 
+.privAgr {
+    display: inline-block;
+    color: #6EC9EF;
+    margin: 5px 0 6px 0;
+}
+
+    .privAgr:hover {
+        color: #ffffff;
+    }
+
 .footIcHelp {
     background-image: url(Images/NewFront/footIcHelp.svg);
 }
@@ -846,13 +893,6 @@ footer {
 .butCallBackPosF2 {
     margin: 0 0 5px 0;
 }
-
-.privAgr {
-  display: block;
-  color: #6EC9EF;
-  margin: 5px 0 6px 0; }
-  .privAgr:hover {
-    color: #ffffff; }
 
 .footerBottom {
     font-size: 14px;
@@ -941,7 +981,7 @@ footer {
 
 @media (max-width: 1600px) {
     .table1 table {
-        font-size: 12px;
+        font-size: 11px;
     }
 
         .table1 table th {
@@ -952,6 +992,9 @@ footer {
             padding: 10px !important;
         }
 
+    .tablesorter-header-inner:after {
+        padding: 0 0 0 2px;
+    }
 }
 
 @media (max-width: 1200px) {

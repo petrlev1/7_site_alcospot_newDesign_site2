@@ -1,4 +1,4 @@
-.search {
+﻿.search {
     border: 1px solid #2185C5;
 }
 
@@ -242,21 +242,41 @@ td.table-column-icon {
     text-align: left;
 }
 
+    .tablesorter-default th, .tablesorter-default thead td {
+        font-weight: bold;
+        border-collapse: collapse;
+        font-size: 15px;
+        padding: 22px;
+    }
+
 
     .tablesorter-default tfoot td {
         border: 0;
     }
 
-.tablesorter-header-inner { display: inline-block; padding: 0 18px 0 0;
-background-image: url(../Content/Icons/arrows.svg);
+    .tablesorter-default .header,
+    .tablesorter-default .tablesorter-header {
+        background-image: url(/Content/Icons/arrows.gif);
         background-position: center right;
         background-repeat: no-repeat;
-    cursor: pointer;
-}
+        cursor: pointer;
+        white-space: normal;
+        padding: 4px 20px 4px 4px;
+    }
 
-.tablesorter-headerSortUp { background-image: url(../Content/Icons/arrowUp.svg); }
+    .tablesorter-default thead .headerSortUp,
+    .tablesorter-default thead .tablesorter-headerSortUp,
+    .tablesorter-default thead .tablesorter-headerAsc {
+        background-image: url(/Content/Icons/arrowUp.gif);
+        border-bottom: #000 2px solid;
+    }
 
-.tablesorter-headerSortDown { background-image: url(../Content/Icons/arrowDown.svg); }
+    .tablesorter-default thead .headerSortDown,
+    .tablesorter-default thead .tablesorter-headerSortDown,
+    .tablesorter-default thead .tablesorter-headerDesc {
+        background-image: url(/Content/Icons/arrowDown.gif);
+        border-bottom: #000 2px solid;
+    }
 
     .tablesorter-default thead .sorter-false {
         background-image: none;
