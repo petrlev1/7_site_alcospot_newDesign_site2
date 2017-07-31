@@ -115,8 +115,7 @@ header {
     position: relative;
     font-size: 1.2em;
     padding: 15px 15px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px; }
+    border-radius: 10px; }
     .nav1 a:hover {
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
       background: linear-gradient(#ffffff, #f4f4f4); }
@@ -189,6 +188,9 @@ header {
   .nav1SubMenuHover:hover .nav1SubItem {
     background: linear-gradient(#ffffff, #f4f4f4);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); }
+  .nav1SubMenuHover a {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0; }
 
 .nav1SubItem {
   display: inline-block;
@@ -619,19 +621,21 @@ h2 {
 }
 
 .DropDownBlockLink {
-    display: inline-block;
-    font-size: 1.2em;
-    color: #0774B5;
-    padding: 5px 10px 2px 0;
-    border-bottom: 1px #75C4EA dashed;
-}
+  display: inline-block;
+  font-size: 1.2em;
+  color: #0774B5;
+  padding: 5px 10px 2px 25px;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgba(7, 116, 181, 0.7); }
 
-    .DropDownBlockLink:before {
-        content: "+ ";
-        font-size: 21px;
-        font-weight: 100;
-        color: #75C4EA;
-    }
+.DropDownBlockLink:before {
+  content: "+ ";
+  position: absolute;
+  margin: -6px 0 0 -24px;
+  font-size: 21px;
+  font-weight: 100;
+  color: #75C4EA; }
 
 input.DropDownBlockCheck:checked ~ .DropDownBlockCont {
     max-height: 1000px;
@@ -641,7 +645,7 @@ input.DropDownBlockCheck:checked ~ .DropDownBlockCont {
 
 input.DropDownBlockCheck:checked + .DropDownBlockLink {
     font-weight: bold;
-    border-bottom: none;
+    text-decoration: none;
 }
 
 input.DropDownBlockCheck:checked + .DropDownBlockLink:before {
